@@ -42,7 +42,7 @@
             this.lb_transportes.FormattingEnabled = true;
             this.lb_transportes.Location = new System.Drawing.Point(12, 12);
             this.lb_transportes.Name = "lb_transportes";
-            this.lb_transportes.Size = new System.Drawing.Size(221, 264);
+            this.lb_transportes.Size = new System.Drawing.Size(255, 264);
             this.lb_transportes.TabIndex = 0;
             // 
             // cb_tipodetransporte
