@@ -1,0 +1,5 @@
+﻿Consigna:
+	Se desea crear una aplicación para determinar el tipo de transporte siguiendo el diagrama UML
+detallado debajo. Para seguir con el ejercicio, se deberá generar una aplicación de consola,
+winforms o web (La que te sea más fácil) donde se debe visualizar una colección de 10
+transportes, 5 Omnibus, 5 Taxis informando la cantidad de pasajeros.
