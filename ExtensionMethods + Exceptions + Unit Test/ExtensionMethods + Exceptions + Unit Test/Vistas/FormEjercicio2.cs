@@ -14,7 +14,7 @@ namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
 {
     public partial class FormEjercicio2 : Form
     {
-        ControlEjercicio2 control = new ControlEjercicio2();
+        Ejercicio2Control control = new Ejercicio2Control();
         public FormEjercicio2()
         {
             InitializeComponent();

@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controles\ControlEjercicio2.cs" />
+    <Compile Include="Controles\Ejercicio2Control.cs" />
+    <Compile Include="Controles\Ejercicio1Control.cs" />
+    <Compile Include="Excepciones\DividirPorCeroEjercicio1Exception.cs" />
     <Compile Include="Excepciones\DividirPorCeroException.cs" />
     <Compile Include="Excepciones\NumeroInvalidoException.cs" />
     <Compile Include="Vistas\Form1.cs">
@@ -93,6 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\FormEjercicio1.resx">
+      <DependentUpon>FormEjercicio1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormEjercicio2.resx">
       <DependentUpon>FormEjercicio2.cs</DependentUpon>
     </EmbeddedResource>

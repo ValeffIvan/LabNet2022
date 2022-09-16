@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ExtensionMethods___Exceptions___Unit_Test.Controles.Tests
 {
     [TestClass()]
-    public class ControlEjercicio1Tests
+    public class Ejercicio2ControlTests
     {
         [TestMethod()]
         public void DividirTest()
@@ -17,7 +17,7 @@ namespace ExtensionMethods___Exceptions___Unit_Test.Controles.Tests
             //Arrange
             decimal num1 = 6;
             decimal num2 = 0;
-            ControlEjercicio2 control = new ControlEjercicio2();
+            Ejercicio2Control control = new Ejercicio2Control();
 
             //Act
             string resultado=control.Dividir(num1, num2);

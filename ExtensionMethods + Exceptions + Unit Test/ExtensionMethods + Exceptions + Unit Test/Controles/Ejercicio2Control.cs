@@ -7,7 +7,7 @@ using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
 
 namespace ExtensionMethods___Exceptions___Unit_Test.Controles
 {
-    public class ControlEjercicio2
+    public class Ejercicio2Control
     {
         public string Dividir (decimal num1, decimal num2)
         {
