@@ -48,9 +48,9 @@
   <ItemGroup>
     <Compile Include="Controles\Ejercicio2Control.cs" />
     <Compile Include="Controles\Ejercicio1Control.cs" />
-    <Compile Include="Excepciones\DividirPorCeroEjercicio1Exception.cs" />
     <Compile Include="Excepciones\DividirPorCeroException.cs" />
-    <Compile Include="Excepciones\NumeroInvalidoException.cs" />
+    <Compile Include="Excepciones\Logic.cs" />
+    <Compile Include="Metodos extendidos\StringExtension.cs" />
     <Compile Include="Vistas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,17 +71,11 @@
     <Compile Include="Vistas\FormEjercicio1.Designer.cs">
       <DependentUpon>FormEjercicio1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\FormEjercicio3.cs">
+    <Compile Include="Vistas\FormEjercicio3 y 4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\FormEjercicio3.Designer.cs">
-      <DependentUpon>FormEjercicio3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\FormEjercicio4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\FormEjercicio4.Designer.cs">
-      <DependentUpon>FormEjercicio4.cs</DependentUpon>
+    <Compile Include="Vistas\FormEjercicio3 y 4.Designer.cs">
+      <DependentUpon>FormEjercicio3 y 4.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Vistas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -101,6 +95,9 @@
     <EmbeddedResource Include="Vistas\FormEjercicio2.resx">
       <DependentUpon>FormEjercicio2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormEjercicio3 y 4.resx">
+      <DependentUpon>FormEjercicio3 y 4.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,9 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-    <Folder Include="Modelos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

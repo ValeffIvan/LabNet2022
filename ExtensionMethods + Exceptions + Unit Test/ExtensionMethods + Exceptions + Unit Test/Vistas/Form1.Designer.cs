@@ -65,6 +65,7 @@
             this.btn_ejercicio3.TabIndex = 2;
             this.btn_ejercicio3.Text = "Ejercicio3";
             this.btn_ejercicio3.UseVisualStyleBackColor = true;
+            this.btn_ejercicio3.Click += new System.EventHandler(this.btn_ejercicio3_Click);
             // 
             // btn_ejercicio4
             // 
@@ -75,6 +76,7 @@
             this.btn_ejercicio4.TabIndex = 3;
             this.btn_ejercicio4.Text = "Ejercicio4";
             this.btn_ejercicio4.UseVisualStyleBackColor = true;
+            this.btn_ejercicio4.Click += new System.EventHandler(this.btn_ejercicio4_Click);
             // 
             // Form1
             // 

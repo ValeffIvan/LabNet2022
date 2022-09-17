@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExtensionMethods___Exceptions___Unit_Test.Excepciones
 {
-    internal class DividirPorCeroEjercicio1Exception:Exception
+    internal class Logic:Exception
     {
-        public DividirPorCeroEjercicio1Exception() : base("No se puede dividir por 0")
-        {
-
-        }
+        public Logic ():base ("Logic exception"){}
     }
 }

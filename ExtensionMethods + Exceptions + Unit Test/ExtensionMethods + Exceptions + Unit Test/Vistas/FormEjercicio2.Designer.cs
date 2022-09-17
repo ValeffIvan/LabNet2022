@@ -28,34 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nupd_numero1 = new System.Windows.Forms.NumericUpDown();
-            this.nupd_numero2 = new System.Windows.Forms.NumericUpDown();
             this.lbl_numero1 = new System.Windows.Forms.Label();
             this.lbl_numero2 = new System.Windows.Forms.Label();
             this.btn_dividir = new System.Windows.Forms.Button();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_numero1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_numero2)).BeginInit();
+            this.txt_num2 = new System.Windows.Forms.TextBox();
+            this.txt_num1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // nupd_numero1
-            // 
-            this.nupd_numero1.Location = new System.Drawing.Point(54, 85);
-            this.nupd_numero1.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nupd_numero1.Name = "nupd_numero1";
-            this.nupd_numero1.Size = new System.Drawing.Size(120, 20);
-            this.nupd_numero1.TabIndex = 0;
-            // 
-            // nupd_numero2
-            // 
-            this.nupd_numero2.Location = new System.Drawing.Point(54, 136);
-            this.nupd_numero2.Name = "nupd_numero2";
-            this.nupd_numero2.Size = new System.Drawing.Size(120, 20);
-            this.nupd_numero2.TabIndex = 1;
             // 
             // lbl_numero1
             // 
@@ -98,34 +77,45 @@
             this.lbl_titulo.TabIndex = 5;
             this.lbl_titulo.Text = "Seleccione numero a dividir: ";
             // 
-            // FormEjercicio1
+            // txt_num2
+            // 
+            this.txt_num2.Location = new System.Drawing.Point(54, 136);
+            this.txt_num2.Name = "txt_num2";
+            this.txt_num2.Size = new System.Drawing.Size(120, 20);
+            this.txt_num2.TabIndex = 6;
+            // 
+            // txt_num1
+            // 
+            this.txt_num1.Location = new System.Drawing.Point(54, 85);
+            this.txt_num1.Name = "txt_num1";
+            this.txt_num1.Size = new System.Drawing.Size(120, 20);
+            this.txt_num1.TabIndex = 7;
+            // 
+            // FormEjercicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(243, 266);
+            this.Controls.Add(this.txt_num1);
+            this.Controls.Add(this.txt_num2);
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.btn_dividir);
             this.Controls.Add(this.lbl_numero2);
             this.Controls.Add(this.lbl_numero1);
-            this.Controls.Add(this.nupd_numero2);
-            this.Controls.Add(this.nupd_numero1);
-            this.Name = "FormEjercicio1";
+            this.Name = "FormEjercicio2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormEjercicio1";
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_numero1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupd_numero2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown nupd_numero1;
-        private System.Windows.Forms.NumericUpDown nupd_numero2;
         private System.Windows.Forms.Label lbl_numero1;
         private System.Windows.Forms.Label lbl_numero2;
         private System.Windows.Forms.Button btn_dividir;
         private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.TextBox txt_num2;
+        private System.Windows.Forms.TextBox txt_num1;
     }
 }

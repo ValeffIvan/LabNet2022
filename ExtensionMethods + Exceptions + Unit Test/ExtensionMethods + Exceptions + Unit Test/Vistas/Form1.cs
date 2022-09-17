@@ -31,5 +31,19 @@ namespace ExtensionMethods___Exceptions___Unit_Test
             formEjercicio2.Owner = this;
             formEjercicio2.ShowDialog();
         }
+
+        private void btn_ejercicio3_Click(object sender, EventArgs e)
+        {
+            FormEjercicio3 formEjercicio3 = new FormEjercicio3();
+            formEjercicio3.Owner = this;
+            formEjercicio3.ShowDialog();
+        }
+
+        private void btn_ejercicio4_Click(object sender, EventArgs e)
+        {
+            FormEjercicio3 formEjercicio3 = new FormEjercicio3();
+            formEjercicio3.Owner = this;
+            formEjercicio3.ShowDialog();
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExtensionMethods___Exceptions___Unit_Test.Controles;
 using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
+using ExtensionMethods___Exceptions___Unit_Test.Metodos_extendidos;
 
 namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
 {
@@ -22,22 +23,7 @@ namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
 
         private void btn_dividir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (nupd_numero1.Value >= 0 && nupd_numero2.Value >= 0)
-                {
-                    MessageBox.Show(control.Dividir(nupd_numero1.Value, nupd_numero2.Value));
-                }
-                else
-                {
-                    throw new NumeroInvalidoException ();
-                }
-            }
-            catch (NumeroInvalidoException nex)
-            {
-                MessageBox.Show(nex.Message);
-            }
-
+            MessageBox.Show(control.Dividir(txt_num1.Text, txt_num2.Text));
         }
     }
 }

@@ -48,6 +48,11 @@
             // nupd_valorunico
             // 
             this.nupd_valorunico.Location = new System.Drawing.Point(16, 47);
+            this.nupd_valorunico.Maximum = new decimal(new int[] {
+            276447231,
+            23283,
+            0,
+            0});
             this.nupd_valorunico.Name = "nupd_valorunico";
             this.nupd_valorunico.Size = new System.Drawing.Size(161, 20);
             this.nupd_valorunico.TabIndex = 1;

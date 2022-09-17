@@ -1,9 +1,9 @@
-﻿using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
 
 namespace ExtensionMethods___Exceptions___Unit_Test.Controles
 {
@@ -13,9 +13,9 @@ namespace ExtensionMethods___Exceptions___Unit_Test.Controles
         {
             try
             {
-                throw new DividirPorCeroEjercicio1Exception();
+                throw new DivideByZeroException ();
             }
-            catch (DividirPorCeroEjercicio1Exception dex)
+            catch (DivideByZeroException dex)
             {
                 return dex.Message;
             }
