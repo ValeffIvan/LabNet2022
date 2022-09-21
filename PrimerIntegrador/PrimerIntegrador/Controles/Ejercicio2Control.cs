@@ -14,6 +14,10 @@ namespace PrimerIntegrador.Controles
         {
             try
             {
+                if (num1.Length > 20 || num2.Length > 20)
+                {
+                    return $"Numero demasiado grande";
+                }
                 decimal numero1 = num1.convertstring();
                 decimal numero2 = num2.convertstring();
                 if (numero2 == 0)
