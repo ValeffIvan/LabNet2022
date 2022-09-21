@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Metodos_extendidos
+namespace PrimerIntegrador.Metodos_extendidos
 {
     public static class StringExtension
     {

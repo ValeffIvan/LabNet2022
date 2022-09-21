@@ -1,4 +1,4 @@
-﻿namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
+﻿namespace PrimerIntegrador.Vistas
 {
     partial class FormEjercicio3
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
+using PrimerIntegrador.Excepciones;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Controles
+namespace PrimerIntegrador.Controles
 {
     internal class Ejercicio1Control
     {

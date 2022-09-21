@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExtensionMethods___Exceptions___Unit_Test.Controles;
+using PrimerIntegrador.Controles;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
+namespace PrimerIntegrador.Vistas
 {
     public partial class FormEjercicio1 : Form
     {

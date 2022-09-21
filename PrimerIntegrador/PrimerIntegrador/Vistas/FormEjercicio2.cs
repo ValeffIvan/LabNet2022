@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExtensionMethods___Exceptions___Unit_Test.Controles;
-using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
-using ExtensionMethods___Exceptions___Unit_Test.Metodos_extendidos;
+using PrimerIntegrador.Controles;
+using PrimerIntegrador.Excepciones;
+using PrimerIntegrador.Metodos_extendidos;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Vistas
+namespace PrimerIntegrador.Vistas
 {
     public partial class FormEjercicio2 : Form
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExtensionMethods___Exceptions___Unit_Test.Excepciones;
-using ExtensionMethods___Exceptions___Unit_Test.Metodos_extendidos;
+using PrimerIntegrador.Excepciones;
+using PrimerIntegrador.Metodos_extendidos;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Controles
+namespace PrimerIntegrador.Controles
 {
     public class Ejercicio2Control
     {

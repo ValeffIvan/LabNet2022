@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods + Exceptions + Unit Test", "ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test.csproj", "{80BF9937-9288-4E28-A3CA-C749E9DF85F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods + Exceptions + Unit TestTests", "ExtensionMethods + Exceptions + Unit TestTests\ExtensionMethods + Exceptions + Unit TestTests.csproj", "{00117114-2533-45F8-8CAF-5D2B908C7B24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerIntegrador", "PrimerIntegrador\PrimerIntegrador.csproj", "{00117114-2533-45F8-8CAF-5D2B908C7B24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

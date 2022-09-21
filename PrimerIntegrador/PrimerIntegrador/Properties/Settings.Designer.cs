@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Properties
+namespace PrimerIntegrador.Properties
 {
 
 

@@ -1,4 +1,4 @@
-﻿namespace ExtensionMethods___Exceptions___Unit_Test
+﻿namespace PrimerIntegrador
 {
     partial class Form1
     {

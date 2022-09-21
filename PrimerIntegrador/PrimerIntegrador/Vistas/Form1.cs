@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExtensionMethods___Exceptions___Unit_Test.Vistas;
+using PrimerIntegrador.Vistas;
 
-namespace ExtensionMethods___Exceptions___Unit_Test
+namespace PrimerIntegrador
 {
     public partial class Form1 : Form
     {

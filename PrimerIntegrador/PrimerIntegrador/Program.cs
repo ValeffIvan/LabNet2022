@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ExtensionMethods___Exceptions___Unit_Test
+namespace PrimerIntegrador
 {
     internal static class Program
     {

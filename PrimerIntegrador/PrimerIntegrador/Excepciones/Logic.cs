@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtensionMethods___Exceptions___Unit_Test.Excepciones
+namespace PrimerIntegrador.Excepciones
 {
     internal class Logic:Exception
     {

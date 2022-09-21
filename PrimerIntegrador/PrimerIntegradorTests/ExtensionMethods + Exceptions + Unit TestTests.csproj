@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test.csproj">
+    <ProjectReference Include="..\ExtensionMethods + Exceptions + Unit Test\Primer_Integrador.csproj">
       <Project>{80BF9937-9288-4E28-A3CA-C749E9DF85F6}</Project>
-      <Name>ExtensionMethods + Exceptions + Unit Test</Name>
+      <Name>Primer_Integrador</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
