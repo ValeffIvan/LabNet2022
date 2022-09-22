@@ -21,7 +21,20 @@ namespace PrimerIntegrador.Vistas
 
         private void btn_verexcepcion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(logic.Message+"\n"+logic.ToString());
+            try
+            {
+                throw logic.TirarExcepcion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Mensaje: {ex.Message} \n tipo:{ex}" );
+            }
+            
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -41,9 +41,9 @@ namespace PrimerIntegrador
 
         private void btn_ejercicio4_Click(object sender, EventArgs e)
         {
-            FormEjercicio3 formEjercicio3 = new FormEjercicio3();
-            formEjercicio3.Owner = this;
-            formEjercicio3.ShowDialog();
+            FormEjercicio4 formEjercicio4 = new FormEjercicio4();
+            formEjercicio4.Owner = this;
+            formEjercicio4.ShowDialog();
         }
     }
 }

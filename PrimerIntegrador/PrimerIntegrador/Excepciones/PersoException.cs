@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace PrimerIntegrador.Excepciones
 {
-    internal class Logic:Exception
+    internal class PersoException:Exception
     {
-        public Logic ():base ("Logic exception"){}
+        public PersoException() : base("Excepcion personalizada")
+        {
+
+        }
     }
 }
