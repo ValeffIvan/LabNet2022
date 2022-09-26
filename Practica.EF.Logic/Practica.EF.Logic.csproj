@@ -71,9 +71,9 @@
       <Project>{90D99CAA-1D81-4BAA-ACB0-06BC44501945}</Project>
       <Name>Practica.EF.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Practica.EF.Exceptions\Practica.EF.Exceptions.csproj">
+    <ProjectReference Include="..\Practica.EF.Exceptions\Practica.EF.Common.csproj">
       <Project>{7B296635-4B3E-40B8-8B97-9B8DAED1701F}</Project>
-      <Name>Practica.EF.Exceptions</Name>
+      <Name>Practica.EF.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

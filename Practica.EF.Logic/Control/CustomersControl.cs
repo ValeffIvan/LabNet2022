@@ -32,21 +32,6 @@ namespace Practica.EF.Logic.Control
             return customersLogic.GetCustomers(CustomerID);
         }
 
-        public bool LengthAccepted (string companyName, string contactName,string contactTitle, string address, 
-                                   string city, string region, string postalCode, string country, 
-                                   string phone, string fax)
-        {
-            if (companyName.LengthMax(40) && contactName.LengthMax(30) && contactTitle.LengthMax(30) &&
-                    address.LengthMax(60) && city.LengthMax(15) && region.LengthMax(15) && postalCode.LengthMax(10) &&
-                    country.LengthMax(15) && phone.LengthMax(24) && fax.LengthMax(24))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public string AddCustomer(string customerID, string companyName, string contactName,
                                   string contactTitle, string address, string city, string region,
@@ -54,8 +39,8 @@ namespace Practica.EF.Logic.Control
         {
             if (customerID != "" && companyName != "")
             {
-                if (LengthAccepted(companyName,  contactName,  contactTitle,  address, city,  region,  postalCode, 
-                                  country, phone,  fax))
+                if (validation.LengthAccepted(companyName,  contactName,  contactTitle,  address, city,  region, 
+                                              postalCode, country, phone,  fax))
                 {
                     Customers customers = new Customers();
                     customers.CustomerID = customerID;
