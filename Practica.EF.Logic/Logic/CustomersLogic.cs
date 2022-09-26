@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Practica.EF.Logic.Logic
 {
-    public class CustomersLogic:BaseLogic, ILogic<Customers>
+    public class CustomersLogic:BaseLogic, ILogic<Customers,string>
     {
         public List<Customers> GetAll()
         {
@@ -83,18 +83,14 @@ namespace Practica.EF.Logic.Logic
         {
             try
             {
-                var customersDelete = context.Customers.Single(r => r.CustomerID == id);
-
+                var customersDelete = context.Customers.First(r => r.CustomerID == id);
                 context.Customers.Remove(customersDelete);
                 context.SaveChanges();
                 return "Se ha eliminado con exito";
             }
-            catch (NotUniqueIdException nex)
-            {
-                return nex.Message;
-            }
             catch (Exception ex)
             {
+                ForeignKeyException foreignKeyException = ex as ForeignKeyException;
                 return ex.Message;
             }
         }
