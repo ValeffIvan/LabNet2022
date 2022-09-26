@@ -41,6 +41,7 @@
             this.dgv_Suppliers.Location = new System.Drawing.Point(0, 0);
             this.dgv_Suppliers.Name = "dgv_Suppliers";
             this.dgv_Suppliers.ReadOnly = true;
+            this.dgv_Suppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Suppliers.Size = new System.Drawing.Size(707, 450);
             this.dgv_Suppliers.TabIndex = 0;
             // 
@@ -64,7 +65,7 @@
             this.Controls.Add(this.dgv_Suppliers);
             this.Name = "FormSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "Suppliers";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Suppliers)).EndInit();
             this.ResumeLayout(false);
 

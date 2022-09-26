@@ -1,25 +1,22 @@
 ﻿using Practica.EF.Data;
 using Practica.EF.Entities;
+using Practica.EF.Logic.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica.EF.Logic
+namespace Practica.EF.Logic.Logic
 {
-    public class SuppliersLogic
+    public class SuppliersLogic:BaseLogic
     {
-        private readonly NorthwindContext context;
-
-        public SuppliersLogic()
-        {
-            context = new NorthwindContext();
-        }
 
         public List<Suppliers> GetAll()
         {
             return context.Suppliers.ToList();
         }
+
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Practica.EF.Entities;
 using Practica.EF.Logic;
+using Practica.EF.Logic.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
