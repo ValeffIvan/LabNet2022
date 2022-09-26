@@ -64,7 +64,7 @@ namespace Practica.EF.Logic.Control.Tests
 
             //Act
 
-            resultado = customersControl.LengthAcepted(companyName, contactName, contactTitle, address, city, region,
+            resultado = customersControl.LengthAccepted(companyName, contactName, contactTitle, address, city, region,
                                          postalCode, country, phone, fax);
 
             //Assert
