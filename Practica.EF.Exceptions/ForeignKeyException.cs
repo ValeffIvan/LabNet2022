@@ -8,7 +8,7 @@ namespace Practica.EF.Exceptions
 {
     public class ForeignKeyException : Exception
     {
-        public ForeignKeyException(string message) : base(@"Can't remove the customer. Talk with the support service ")
+        public ForeignKeyException(string message) : base(@"Cannot be deleted because it is linked to another table. Talk with the support service ")
         {
         }
     }

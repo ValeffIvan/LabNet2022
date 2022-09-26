@@ -1,6 +1,7 @@
 ﻿using Practica.EF.Entities;
 using Practica.EF.Logic.ExtensionMethods;
 using Practica.EF.Logic.Logic;
+using Practica.EF.Logic.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +16,7 @@ namespace Practica.EF.Logic.Control
     public class CustomersControl
     {
         CustomersLogic customersLogic = new CustomersLogic();
-
+        SuppliersAndCustomersValidation validation = new SuppliersAndCustomersValidation();
         public List<Customers> GetAll ()
         {
             return customersLogic.GetAll ();
