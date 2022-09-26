@@ -1,4 +1,5 @@
 ﻿using Practica.EF.Entities;
+using Practica.EF.Logic.ExtensionMethods;
 using Practica.EF.Logic.Logic;
 using System;
 using System.Collections.Generic;
@@ -31,9 +32,9 @@ namespace Practica.EF.Logic.Control
                            string city, string region, string postalCode, string country,
                            string phone, string fax)
         {
-            if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
-                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 &&
-                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
+            if (companyName.LengthMax (40) && contactName.LengthMax(30) && contactTitle.LengthMax(30) &&
+                    address.LengthMax (60) && city.LengthMax (15) && region.LengthMax(15) && postalCode.LengthMax(10) &&
+                    country.LengthMax (15) && phone.LengthMax(24) && fax.LengthMax(24))
             {
                 return true;
             }
