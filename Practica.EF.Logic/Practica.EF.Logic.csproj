@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bases\BaseLogic.cs" />
+    <Compile Include="Bases\ILogic.cs" />
     <Compile Include="Control\CustomersControl.cs" />
+    <Compile Include="Control\SuppliersControl.cs" />
     <Compile Include="Logic\CustomersLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logic\SuppliersLogic.cs" />

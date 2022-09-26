@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Practica.EF.Logic.Logic
 {
-    public class CustomersLogic:BaseLogic
+    public class CustomersLogic:BaseLogic, ILogic<Customers>
     {
         public List<Customers> GetAll()
         {
@@ -28,13 +28,14 @@ namespace Practica.EF.Logic.Logic
             }
             return null;
         }
-        public void Add(Customers customers)
+        public string Add(Customers customers)
         {
             context.Customers.Add(customers);
             context.SaveChanges();
+            return "Customer Added";
         }
 
-        public bool Exist (string customerID)
+        public bool Exist(string customerID)
         {
             foreach (Customers customers in GetAll())
             {
@@ -44,6 +45,27 @@ namespace Practica.EF.Logic.Logic
                 }
             }
             return false;
+        }
+        public string Update(Customers customers)
+        {
+            try
+            {
+                if (Exist(customers.CustomerID))
+                {
+                    var customerUpdate = context.Customers.Find(customers.CustomerID);
+
+                    customerUpdate = customers;
+                    context.SaveChanges();
+                    return "Customer update";
+                }
+                else
+                {
+                    return "Costomer dont exist";
+                }
+            }catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public string Delete(string id)
@@ -59,6 +81,10 @@ namespace Practica.EF.Logic.Logic
             catch (NotUniqueIdException nex)
             {
                 return nex.Message;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
             }
         }
     }
