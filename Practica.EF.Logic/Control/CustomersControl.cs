@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,15 +30,30 @@ namespace Practica.EF.Logic.Control
             return customersLogic.GetCustomers(CustomerID);
         }
 
+        public bool LengthAccepted (string companyName, string contactName,string contactTitle, string address, 
+                                   string city, string region, string postalCode, string country, 
+                                   string phone, string fax)
+        {
+            if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
+                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 &&
+                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public string AddCustomer(string customerID, string companyName, string contactName,
                                   string contactTitle, string address, string city, string region,
                                   string postalCode, string country, string phone, string fax)
         {
             if (customerID != "" && companyName != "")
             {
-                if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
-                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 &&
-                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
+                if (LengthAccepted(companyName,  contactName,  contactTitle,  address, city,  region,  postalCode, 
+                                  country, phone,  fax))
                 {
                     Customers customers = new Customers();
                     customers.CustomerID = customerID;

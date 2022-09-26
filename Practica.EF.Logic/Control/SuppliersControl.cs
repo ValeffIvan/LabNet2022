@@ -27,15 +27,30 @@ namespace Practica.EF.Logic.Control
             return suppliersLogic.GetSuppliers(suppliersID);
         }
 
+        public bool LengthAccepted(string companyName, string contactName, string contactTitle, string address,
+                           string city, string region, string postalCode, string country,
+                           string phone, string fax)
+        {
+            if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
+                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 &&
+                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public string AddSuppliers(int suppliersID, string companyName, string contactName,
                                   string contactTitle, string address, string city, string region,
                                   string postalCode, string country, string phone, string fax,string homePage)
         {
             if (suppliersID.ToString() != "" && companyName != "")
             {
-                if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
-                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 && 
-                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
+                if (LengthAccepted(companyName,  contactName,  contactTitle,  address, city,  region,  postalCode,  
+                                  country, phone,  fax))
                 {
                     Suppliers supplies = new Suppliers();
                     supplies.SupplierID = suppliersID;
