@@ -37,14 +37,13 @@ namespace Practica.EF.UI
                                                          txt_ContactTitle.Text, txt_Adress.Text, 
                                                          txt_City.Text, txt_Region.Text,
                                                          txt_PostalCode.Text, txt_Country.Text,
-                                                         txt_Phone.Text, txt_Fax.Text));
+                                                         txt_Phone.Text, txt_Fax.Text,txt_HomePage.Text));
             dgv_Suppliers.DataSource = null;
             dgv_Suppliers.DataSource= suppliersControl.GetAll();
         }
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
-            npd_SupplierID.Value = 1;
             txt_ContactName.Text = "";
             txt_CompanyName.Text = "";
             txt_Adress.Text = "";
@@ -55,6 +54,7 @@ namespace Practica.EF.UI
             txt_Fax.Text = "";
             txt_ContactTitle.Text = "";
             txt_Country.Text = "";
+            txt_HomePage.Text = "";
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)

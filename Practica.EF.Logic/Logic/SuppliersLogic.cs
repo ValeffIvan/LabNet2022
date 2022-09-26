@@ -50,18 +50,20 @@ namespace Practica.EF.Logic.Logic
         {
             try
             {
-                if (Exist(suppliers.SupplierID))
-                {
-                    var suppliersUpdate = context.Suppliers.Find(suppliers.SupplierID);
+                var suppliersUpdate = context.Suppliers.Find(suppliers.SupplierID);
 
-                    suppliersUpdate = suppliers;
-                    context.SaveChanges();
-                    return "Supplier update";
-                }
-                else
-                {
-                    return "Supplier dont exist";
-                }
+                suppliersUpdate.Address = suppliers.Address;
+                suppliersUpdate.Products = suppliers.Products;
+                suppliersUpdate.Phone =suppliers.Phone;
+                suppliersUpdate.City = suppliers.City;
+                suppliersUpdate.CompanyName = suppliers.CompanyName;
+                suppliersUpdate.ContactName = suppliers.ContactName;
+                suppliersUpdate.Country = suppliers.Country;
+                suppliersUpdate.Fax= suppliers.Fax;
+                suppliersUpdate.ContactTitle = suppliers.ContactTitle;
+                suppliersUpdate.Region = suppliers.Region;
+                context.SaveChanges();
+                return "Supplier update";
             }
             catch (Exception ex)
             {

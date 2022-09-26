@@ -28,33 +28,41 @@ namespace Practica.EF.Logic.Control
             return customersLogic.GetCustomers(CustomerID);
         }
 
-        public string AddCustomer(string CustomerID, string CompanyName, string ContactName,
-                                  string ContactTitle, string Address, string City, string Region,
-                                  string PostalCode, string Country, string Phone, string Fax)
+        public string AddCustomer(string customerID, string companyName, string contactName,
+                                  string contactTitle, string address, string city, string region,
+                                  string postalCode, string country, string phone, string fax)
         {
-            if (CustomerID != "" && CompanyName != "")
+            if (customerID != "" && companyName != "")
             {
-                Customers customers = new Customers();
-                customers.CustomerID = CustomerID;
-                customers.CompanyName = CompanyName;
-                customers.ContactName = ContactName;
-                customers.ContactTitle = ContactTitle;
-                customers.Address = Address;
-                customers.City = City;
-                customers.Region = Region;
-                customers.PostalCode = PostalCode;
-                customers.Country = Country;
-                customers.Phone = Phone;
-                customers.Fax = Fax;
-                if (!customersLogic.Exist(CustomerID))
+                if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
+                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 &&
+                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
                 {
-                   
-                    return  customersLogic.Add(customers);
+                    Customers customers = new Customers();
+                    customers.CustomerID = customerID;
+                    customers.CompanyName = companyName;
+                    customers.ContactName = contactName;
+                    customers.ContactTitle = contactTitle;
+                    customers.Address = address;
+                    customers.City = city;
+                    customers.Region = region;
+                    customers.PostalCode = postalCode;
+                    customers.Country = country;
+                    customers.Phone = phone;
+                    customers.Fax = fax;
+                    if (!customersLogic.Exist(customerID))
+                    {
+
+                        return customersLogic.Add(customers);
+                    }
+                    else
+                    {
+                        return customersLogic.Update(customers);
+                    }
                 }
                 else
                 {
-                    
-                    return customersLogic.Update(customers);
+                    return "Valor invalido";
                 }
             }
             else

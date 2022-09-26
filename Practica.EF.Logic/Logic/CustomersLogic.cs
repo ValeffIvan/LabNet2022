@@ -54,7 +54,18 @@ namespace Practica.EF.Logic.Logic
                 {
                     var customerUpdate = context.Customers.Find(customers.CustomerID);
 
-                    customerUpdate = customers;
+                    customerUpdate.CustomerID = customers.CustomerID;
+                    customerUpdate.Address = customers.Address;
+                    customerUpdate.Phone = customers.Phone;
+                    customerUpdate.Fax = customers.Fax;
+                    customerUpdate.City = customers.City;
+                    customerUpdate.CompanyName = customers.CompanyName;
+                    customerUpdate.Country = customers.Country;
+                    customerUpdate.Region = customers.Region;
+                    customerUpdate.PostalCode = customers.PostalCode;
+                    customerUpdate.ContactTitle = customers.ContactTitle;
+                    customerUpdate.ContactName= customers.ContactName;
+
                     context.SaveChanges();
                     return "Customer update";
                 }

@@ -27,33 +27,43 @@ namespace Practica.EF.Logic.Control
             return suppliersLogic.GetSuppliers(suppliersID);
         }
 
-        public string AddSuppliers(int SuppliersID, string CompanyName, string ContactName,
-                                  string ContactTitle, string Address, string City, string Region,
-                                  string PostalCode, string Country, string Phone, string Fax)
+        public string AddSuppliers(int suppliersID, string companyName, string contactName,
+                                  string contactTitle, string address, string city, string region,
+                                  string postalCode, string country, string phone, string fax,string homePage)
         {
-            if (SuppliersID.ToString() != "" && CompanyName != "")
+            if (suppliersID.ToString() != "" && companyName != "")
             {
-                Suppliers supplies = new Suppliers();
-                supplies.SupplierID = SuppliersID;
-                supplies.CompanyName = CompanyName;
-                supplies.ContactName = ContactName;
-                supplies.ContactTitle = ContactTitle;
-                supplies.Address = Address;
-                supplies.City = City;
-                supplies.Region = Region;
-                supplies.PostalCode = PostalCode;
-                supplies.Country = Country;
-                supplies.Phone = Phone;
-                supplies.Fax = Fax;
-                if (!suppliersLogic.Exist(SuppliersID))
+                if (companyName.Length <= 40 && contactName.Length <= 30 && contactTitle.Length <= 30 &&
+                    address.Length <= 60 && city.Length <= 15 && region.Length <= 15 && postalCode.Length <= 10 && 
+                    country.Length <= 15 && phone.Length <= 24 && fax.Length <= 24)
                 {
+                    Suppliers supplies = new Suppliers();
+                    supplies.SupplierID = suppliersID;
+                    supplies.CompanyName = companyName;
+                    supplies.ContactName = contactName;
+                    supplies.ContactTitle = contactTitle;
+                    supplies.Address = address;
+                    supplies.City = city;
+                    supplies.Region = region;
+                    supplies.PostalCode = postalCode;
+                    supplies.Country = country;
+                    supplies.Phone = phone;
+                    supplies.Fax = fax;
+                    supplies.HomePage = homePage;
+                    if (!suppliersLogic.Exist(suppliersID))
+                    {
 
-                    return suppliersLogic.Add(supplies);
+                        return suppliersLogic.Add(supplies);
+                    }
+                    else
+                    {
+
+                        return suppliersLogic.Update(supplies);
+                    }
                 }
                 else
                 {
-
-                    return suppliersLogic.Update(supplies);
+                    return "Valor invalido";
                 }
             }
             else
