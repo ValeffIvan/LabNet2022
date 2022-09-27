@@ -89,7 +89,7 @@
             this.txt_CustomerID.Name = "txt_CustomerID";
             this.txt_CustomerID.Size = new System.Drawing.Size(100, 20);
             this.txt_CustomerID.TabIndex = 3;
-            this.txt_CustomerID.TextChanged += new System.EventHandler(this.txt_CustomerID_TextChanged);
+            
             // 
             // txt_Phone
             // 
@@ -97,7 +97,7 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(100, 20);
             this.txt_Phone.TabIndex = 4;
-            this.txt_Phone.TextChanged += new System.EventHandler(this.txt_Phone_TextChanged);
+         
             // 
             // txt_CompanyName
             // 
@@ -105,7 +105,7 @@
             this.txt_CompanyName.Name = "txt_CompanyName";
             this.txt_CompanyName.Size = new System.Drawing.Size(100, 20);
             this.txt_CompanyName.TabIndex = 5;
-            this.txt_CompanyName.TextChanged += new System.EventHandler(this.txt_CompanyName_TextChanged);
+
             // 
             // txt_ContactName
             // 
@@ -113,7 +113,7 @@
             this.txt_ContactName.Name = "txt_ContactName";
             this.txt_ContactName.Size = new System.Drawing.Size(100, 20);
             this.txt_ContactName.TabIndex = 6;
-            this.txt_ContactName.TextChanged += new System.EventHandler(this.txt_ContactName_TextChanged);
+           
             // 
             // txt_Fax
             // 
@@ -121,7 +121,7 @@
             this.txt_Fax.Name = "txt_Fax";
             this.txt_Fax.Size = new System.Drawing.Size(100, 20);
             this.txt_Fax.TabIndex = 7;
-            this.txt_Fax.TextChanged += new System.EventHandler(this.txt_Fax_TextChanged);
+          
             // 
             // txt_ContactTitle
             // 
@@ -129,7 +129,7 @@
             this.txt_ContactTitle.Name = "txt_ContactTitle";
             this.txt_ContactTitle.Size = new System.Drawing.Size(100, 20);
             this.txt_ContactTitle.TabIndex = 8;
-            this.txt_ContactTitle.TextChanged += new System.EventHandler(this.txt_ContactTitle_TextChanged);
+ 
             // 
             // txt_Adress
             // 
@@ -137,7 +137,7 @@
             this.txt_Adress.Name = "txt_Adress";
             this.txt_Adress.Size = new System.Drawing.Size(100, 20);
             this.txt_Adress.TabIndex = 9;
-            this.txt_Adress.TextChanged += new System.EventHandler(this.txt_Adress_TextChanged);
+
             // 
             // txt_City
             // 
@@ -145,7 +145,7 @@
             this.txt_City.Name = "txt_City";
             this.txt_City.Size = new System.Drawing.Size(100, 20);
             this.txt_City.TabIndex = 10;
-            this.txt_City.TextChanged += new System.EventHandler(this.txt_City_TextChanged);
+  
             // 
             // txt_PostalCode
             // 
@@ -153,7 +153,7 @@
             this.txt_PostalCode.Name = "txt_PostalCode";
             this.txt_PostalCode.Size = new System.Drawing.Size(100, 20);
             this.txt_PostalCode.TabIndex = 11;
-            this.txt_PostalCode.TextChanged += new System.EventHandler(this.txt_PostalCode_TextChanged);
+ 
             // 
             // txt_Country
             // 
@@ -161,7 +161,7 @@
             this.txt_Country.Name = "txt_Country";
             this.txt_Country.Size = new System.Drawing.Size(100, 20);
             this.txt_Country.TabIndex = 11;
-            this.txt_Country.TextChanged += new System.EventHandler(this.txt_Country_TextChanged);
+
             // 
             // txt_Region
             // 
@@ -169,7 +169,7 @@
             this.txt_Region.Name = "txt_Region";
             this.txt_Region.Size = new System.Drawing.Size(100, 20);
             this.txt_Region.TabIndex = 12;
-            this.txt_Region.TextChanged += new System.EventHandler(this.txt_Region_TextChanged);
+    
             // 
             // label1
             // 
@@ -179,7 +179,7 @@
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Customer ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+        
             // 
             // label2
             // 
@@ -190,7 +190,7 @@
             this.label2.Size = new System.Drawing.Size(192, 25);
             this.label2.TabIndex = 14;
             this.label2.Text = "Add or modify data";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+ 
             // 
             // label3
             // 
@@ -200,7 +200,7 @@
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Company Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+     
             // 
             // label4
             // 
@@ -210,7 +210,7 @@
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Contact Name";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+     
             // 
             // label5
             // 
@@ -220,7 +220,7 @@
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Contact Title";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+       
             // 
             // label6
             // 
@@ -230,7 +230,7 @@
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Address";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+   
             // 
             // label7
             // 
@@ -240,7 +240,7 @@
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 19;
             this.label7.Text = "City";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+   
             // 
             // label8
             // 
@@ -250,7 +250,7 @@
             this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Region";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+   
             // 
             // label9
             // 
@@ -260,7 +260,7 @@
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 21;
             this.label9.Text = "Postal Code";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+
             // 
             // label10
             // 
@@ -270,7 +270,7 @@
             this.label10.Size = new System.Drawing.Size(43, 13);
             this.label10.TabIndex = 22;
             this.label10.Text = "Country";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+  
             // 
             // label11
             // 
@@ -280,7 +280,7 @@
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 23;
             this.label11.Text = "Phone";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+
             // 
             // label12
             // 
@@ -290,7 +290,7 @@
             this.label12.Size = new System.Drawing.Size(24, 13);
             this.label12.TabIndex = 24;
             this.label12.Text = "Fax";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+
             // 
             // btn_aceptar
             // 

@@ -95,8 +95,8 @@ namespace Practica.EF.Logic.Logic
             }
             catch (Exception ex)
             {
-                ForeignKeyException foreignKeyException = ex as ForeignKeyException;
-                return ex.Message;
+                ForeignKeyException foreignKeyException = new ForeignKeyException ("Error");
+                return foreignKeyException.Message;
             }
         }
     }
