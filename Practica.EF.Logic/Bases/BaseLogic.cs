@@ -9,7 +9,7 @@ namespace Practica.EF.Logic.Bases
 {
     public class BaseLogic
     {
-        protected readonly NorthwindContext context;
+        protected NorthwindContext context;
 
         public BaseLogic()
         {

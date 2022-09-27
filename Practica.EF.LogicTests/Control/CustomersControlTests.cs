@@ -1,7 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using Practica.EF.Data;
+using Practica.EF.Entities;
 using Practica.EF.Logic.Control;
+using Practica.EF.Logic.Logic;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,32 +19,32 @@ namespace Practica.EF.Logic.Control.Tests
         [TestMethod()]
         public void AddCustomerTest()
         {
-            //Arrange
-            string customerID = "ANATR";
-            string companyName = "Ana Trujillo Emparedados y helados";
-            string contactName = "Anaa Trujillo";
-            string contactTitle = "Owner";
-            string address = "Avda. de la Constitución 2222";
-            string city = "México D.F.";
-            string region = "";
-            string postalCode = "05021";
-            string country = "Mexico";
-            string phone = "(5) 555-4729";
-            string fax = "(5) 555-3745";
+            var mockSet = new Mock<DbSet<Customers>>();
 
-            CustomersControl customersControl = new CustomersControl();
+            var mockContext = new Mock<NorthwindContext>();
+            mockContext.Setup(m => m.Customers).Returns(mockSet.Object);
+
+            CustomersLogic customersLogic = new CustomersLogic(mockContext.Object);
+
+            customersLogic.Add(new Customers
+            {
+                CustomerID = "ANATR",
+                CompanyName = "Ana Trujillo Emparedados y helados",
+                ContactName = "Anaa Trujillo",
+                ContactTitle = "Owner",
+                Address = "Avda. de la Constitución 2222",
+                City = "México D.F.",
+                Region = "",
+                PostalCode = "05021",
+                Country = "Mexico",
+                Phone = "(5) 555-4729",
+                Fax = "(5) 555-3745",
+            });
+
+            mockSet.Verify(m => m.Add(It.IsAny<Customers>()), Times.Once());
+            mockContext.Verify(m => m.SaveChanges(), Times.Once());
 
 
-            string resultado;
-
-            //Act
-
-            resultado = customersControl.AddCustomer(customerID, companyName, contactName, contactTitle, address, city, region,
-                                         postalCode, country, phone, fax);
-
-            //Assert
-
-            Assert.AreEqual(resultado, "Customer update");
         }
     }
 }

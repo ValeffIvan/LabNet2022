@@ -12,6 +12,11 @@ namespace Practica.EF.Logic.Logic
 {
     public class CustomersLogic:BaseLogic, ILogic<Customers,string>
     {
+        public CustomersLogic() { }
+        public CustomersLogic(NorthwindContext contextd)
+        {
+            context = contextd;
+        }
         public List<Customers> GetAll()
         {
             return context.Customers.ToList();

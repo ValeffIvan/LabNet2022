@@ -9,6 +9,8 @@ namespace Practica.EF.Entities
     public partial class Customers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        
+        
         public Customers()
         {
             Orders = new HashSet<Orders>();
