@@ -17,6 +17,12 @@ namespace Practica.EF.Entities
             CustomerDemographics = new HashSet<CustomerDemographics>();
         }
 
+        public override string ToString()
+        {
+            return $"CustomerID: {this.CustomerID }, Contact Name: {this.ContactName}, Company Name: {this.CompanyName}";
+        }
+
+
         [Key]
         [StringLength(5)]
         public string CustomerID { get; set; }

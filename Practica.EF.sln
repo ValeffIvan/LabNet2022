@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.EF.Logic", "Practica.EF.Logic\Practica.EF.Logic.csproj", "{667BA2FD-910A-48E4-B72F-2FE2B9FA2097}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.Linq.Logic", "Practica.EF.Logic\Practica.Linq.Logic.csproj", "{667BA2FD-910A-48E4-B72F-2FE2B9FA2097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.EF.Entities", "Practica.EF.Entities\Practica.EF.Entities.csproj", "{90D99CAA-1D81-4BAA-ACB0-06BC44501945}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.Linq.Entities", "Practica.EF.Entities\Practica.Linq.Entities.csproj", "{90D99CAA-1D81-4BAA-ACB0-06BC44501945}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.EF.Data", "Practica.EF.Data\Practica.EF.Data.csproj", "{A3EB210E-7D3D-45C7-964E-D1FE51AC0ED9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.Linq.Data", "Practica.EF.Data\Practica.Linq.Data.csproj", "{A3EB210E-7D3D-45C7-964E-D1FE51AC0ED9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.EF.Common", "Practica.EF.Exceptions\Practica.EF.Common.csproj", "{7B296635-4B3E-40B8-8B97-9B8DAED1701F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.Linq.Common", "Practica.EF.Exceptions\Practica.Linq.Common.csproj", "{7B296635-4B3E-40B8-8B97-9B8DAED1701F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.EF.LogicTests", "Practica.EF.LogicTests\Practica.EF.LogicTests.csproj", "{85CE93BB-B8A8-4655-BD25-145F14193675}"
 EndProject

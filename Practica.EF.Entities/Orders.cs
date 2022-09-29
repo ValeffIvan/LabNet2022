@@ -14,6 +14,12 @@ namespace Practica.EF.Entities
             Order_Details = new HashSet<Order_Details>();
         }
 
+        public override string ToString()
+        {
+            return $"ID: {CustomerID}, Order Date: {OrderDate}";
+        }
+
+
         [Key]
         public int OrderID { get; set; }
 

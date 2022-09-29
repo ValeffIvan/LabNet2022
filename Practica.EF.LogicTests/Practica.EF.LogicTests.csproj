@@ -82,17 +82,17 @@
     <Compile Include="Validation\SuppliersAndCustomersValidationTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Practica.EF.Data\Practica.EF.Data.csproj">
+    <ProjectReference Include="..\Practica.EF.Data\Practica.Linq.Data.csproj">
       <Project>{a3eb210e-7d3d-45c7-964e-d1fe51ac0ed9}</Project>
-      <Name>Practica.EF.Data</Name>
+      <Name>Practica.Linq.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Practica.EF.Entities\Practica.EF.Entities.csproj">
+    <ProjectReference Include="..\Practica.EF.Entities\Practica.Linq.Entities.csproj">
       <Project>{90d99caa-1d81-4baa-acb0-06bc44501945}</Project>
-      <Name>Practica.EF.Entities</Name>
+      <Name>Practica.Linq.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Practica.EF.Logic\Practica.EF.Logic.csproj">
+    <ProjectReference Include="..\Practica.EF.Logic\Practica.Linq.Logic.csproj">
       <Project>{667BA2FD-910A-48E4-B72F-2FE2B9FA2097}</Project>
-      <Name>Practica.EF.Logic</Name>
+      <Name>Practica.Linq.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

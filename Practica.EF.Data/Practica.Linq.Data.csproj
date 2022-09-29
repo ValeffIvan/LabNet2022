@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{667BA2FD-910A-48E4-B72F-2FE2B9FA2097}</ProjectGuid>
+    <ProjectGuid>{A3EB210E-7D3D-45C7-964E-D1FE51AC0ED9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Practica.EF.Logic</RootNamespace>
-    <AssemblyName>Practica.EF.Logic</AssemblyName>
+    <RootNamespace>Practica.EF.Data</RootNamespace>
+    <AssemblyName>Practica.EF.Data</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,35 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bases\BaseLogic.cs" />
-    <Compile Include="Bases\ILogic.cs" />
-    <Compile Include="Control\CustomersControl.cs" />
-    <Compile Include="Control\SuppliersControl.cs" />
-    <Compile Include="ExtensionMethods\LengthExtension.cs" />
-    <Compile Include="Logic\CustomersLogic.cs" />
+    <Compile Include="NorthwindContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logic\SuppliersLogic.cs" />
-    <Compile Include="Validation\SuppliersAndCustomersValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Practica.EF.Data\Practica.EF.Data.csproj">
-      <Project>{A3EB210E-7D3D-45C7-964E-D1FE51AC0ED9}</Project>
-      <Name>Practica.EF.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Practica.EF.Entities\Practica.EF.Entities.csproj">
+    <ProjectReference Include="..\Practica.EF.Entities\Practica.Linq.Entities.csproj">
       <Project>{90D99CAA-1D81-4BAA-ACB0-06BC44501945}</Project>
-      <Name>Practica.EF.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Practica.EF.Exceptions\Practica.EF.Common.csproj">
-      <Project>{7B296635-4B3E-40B8-8B97-9B8DAED1701F}</Project>
-      <Name>Practica.EF.Common</Name>
+      <Name>Practica.Linq.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

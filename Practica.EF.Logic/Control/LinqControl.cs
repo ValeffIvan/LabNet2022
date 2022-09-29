@@ -1,0 +1,77 @@
+﻿using Practica.EF.Entities;
+using Practica.EF.Logic.Logic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica.EF.Logic.Control
+{
+    public class LinqControl
+    {
+        CustomersLogic customersLogic = new CustomersLogic();
+        ProductsLogic productsLogic = new ProductsLogic();
+        OrdersLogic ordersLogic = new OrdersLogic();
+        //1
+        public IEnumerable<Customers> GetCustomers()
+        {
+            var query = (from Customers in customersLogic.GetAll()
+                         where Customers.CustomerID == "ANTON"
+                         orderby Customers.CustomerID descending
+                         select Customers);
+            return query;
+
+        }
+        //2
+        public IEnumerable<Products> GetProductsWithoutStock()
+        {
+            var query = (from Product in productsLogic.GetAll()
+                         where Product.UnitsInStock == 0
+                         orderby Product.ProductName ascending
+                         select Product);
+
+            return query;
+        }
+        //3
+        public IEnumerable<Products> GetProductsWithStock3Units()
+        {
+            var query = productsLogic.GetAll().Where(p => p.UnitsInStock > 0 && p.UnitPrice >= 3)
+                                              .OrderBy(p => p.ProductName)
+                                              .Select(p => p);
+            return query;
+        }
+        //4
+        public IEnumerable<Customers> GetCustomersRegionWA()
+        {
+            var query = customersLogic.GetAll().Where(p => p.Region == "WA")
+                                              .OrderBy(p => p.ContactName)
+                                              .Select(p => p);
+            return query;
+        }
+        //5
+
+        //6
+        public IEnumerable<Customers> GetCustomersName()
+        {
+            var query = (from Customers in customersLogic.GetAll()
+                         orderby Customers.ContactName ascending
+                         select Customers);
+            return query;
+        }
+
+        //7
+        public IEnumerable<Orders> GetJoinCustomersAndOrders()
+        {
+            var query = (from orders in ordersLogic.GetAll()
+                         join customers in customersLogic.GetAll() 
+                         on orders.CustomerID equals customers.CustomerID
+                         where customers.Region == "WA" //&& orders.OrderDate.Value.Date.ToString() =="01/01/1997"
+                         orderby orders.OrderID ascending
+                         select orders);
+            return query;
+        }
+    }
+}
