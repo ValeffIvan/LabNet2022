@@ -46,12 +46,20 @@ namespace Practica.EF.Logic.Control
         //4
         public IEnumerable<Customers> GetCustomersRegionWA()
         {
-            var query = customersLogic.GetAll().Where(p => p.Region == "WA")
-                                              .OrderBy(p => p.ContactName)
-                                              .Select(p => p);
+            var query = customersLogic.GetAll().Where(c =>c.Region == "WA")
+                                              .OrderBy(c => c.ContactName)
+                                              .Select(c => c);
             return query;
         }
         //5
+
+        public IEnumerable<Products> GetElementOrNull()
+        {
+            var query = productsLogic.GetAll().Where(p => p.ProductID == 789)
+                                              .OrderBy(p => p.ProductName)
+                                              .Select(p => p);
+            return query;
+        }
 
         //6
         public IEnumerable<Customers> GetCustomersName()
@@ -65,10 +73,11 @@ namespace Practica.EF.Logic.Control
         //7
         public IEnumerable<Orders> GetJoinCustomersAndOrders()
         {
+            DateTime date_1 = new DateTime(1997, 01, 01);
             var query = (from orders in ordersLogic.GetAll()
-                         join customers in customersLogic.GetAll() 
+                         join customers in customersLogic.GetAll()
                          on orders.CustomerID equals customers.CustomerID
-                         where customers.Region == "WA" //&& orders.OrderDate.Value.Date.ToString() =="01/01/1997"
+                         where customers.Region == "WA" && orders.OrderDate >= date_1
                          orderby orders.OrderID ascending
                          select orders);
             return query;

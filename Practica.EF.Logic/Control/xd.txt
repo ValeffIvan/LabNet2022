@@ -1,18 +1,4 @@
-﻿using Practica.EF.Entities;
-using Practica.EF.Logic.Control;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practica.Linq.UI
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            LinqControl linqControl = new LinqControl();
+﻿LinqControl linqControl = new LinqControl();
             
             //1.
             var oneCustomer = linqControl.GetCustomers();
@@ -59,7 +45,3 @@ namespace Practica.Linq.UI
                 Console.WriteLine(orders.ToString());
             }
             Console.ReadKey();
-            
-        }
-    }
-}

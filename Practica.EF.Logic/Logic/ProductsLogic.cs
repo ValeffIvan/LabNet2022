@@ -10,31 +10,14 @@ using System.Threading.Tasks;
 
 namespace Practica.EF.Logic.Logic
 {
-    public class ProductsLogic:BaseLogic, ILogic<Products, string>
+    public class ProductsLogic:BaseLogic
     {
-        public string Add(Products aux)
-        {
-            throw new NotImplementedException();
-        }
 
-        public string Delete(string aux)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Products> GetAll()
         {
             return context.Products.ToList();
         }
 
-        public string Update(Products aux)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Products> ILogic<Products, string>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

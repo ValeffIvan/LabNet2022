@@ -16,7 +16,7 @@ namespace Practica.EF.Entities
 
         public override string ToString()
         {
-            return $"ID: {CustomerID}, Order Date: {OrderDate}";
+            return $"Customer ID: {CustomerID}, Employee ID: {EmployeeID}, Order Date: {OrderDate}";
         }
 
 
