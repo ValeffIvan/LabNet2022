@@ -33,18 +33,22 @@ namespace Practica.Linq.UI1
             }
             else if (cb_ejercicios.Text == "Ejercicio 2")
             {
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetProductsWithoutStock().ToList();
             }
             else if (cb_ejercicios.Text == "Ejercicio 3")
             {
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetProductsWithStock3Units().ToList();
             }
             else if (cb_ejercicios.Text == "Ejercicio 4")
             {
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetCustomersRegionWA().ToList();
             }
             else if (cb_ejercicios.Text == "Ejercicio 5")
             {
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetElementOrNull().ToList();
             }
             else if (cb_ejercicios.Text == "Ejercicio 6. Mayuscula")
@@ -63,6 +67,7 @@ namespace Practica.Linq.UI1
                     Fax  = p.Fax,
                     ContactName = p.ContactName.ToUpper(),
                 });
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = updatedItems.ToList();
                 dgv_ejercicios.Columns[11].Visible = false;
                 dgv_ejercicios.Columns[12].Visible = false;
@@ -83,14 +88,59 @@ namespace Practica.Linq.UI1
                     Fax = p.Fax,
                     ContactName = p.ContactName.ToLower(),
                 });
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = updatedItems.ToList();
                 dgv_ejercicios.Columns[11].Visible = false;
                 dgv_ejercicios.Columns[12].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 7")
             {
+                dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetJoinCustomersAndOrders().ToList();
                 dgv_ejercicios.Columns[16].Visible = false;
+            }
+            else if (cb_ejercicios.Text == "Ejercicio 8")
+            {
+                var top3 = linqControl.GetFirst3CustomersRegionWA().Take(3);
+                dgv_ejercicios.DataSource = null;
+                dgv_ejercicios.DataSource =top3.ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
+            }
+            else if (cb_ejercicios.Text == "Ejercicio 9")
+            {
+                dgv_ejercicios.DataSource = null;
+                dgv_ejercicios.DataSource = linqControl.GetProductOrderByName().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
+            }
+            else if(cb_ejercicios.Text == "Ejercicio 10")
+            {
+                dgv_ejercicios.DataSource = null;
+                dgv_ejercicios.DataSource= linqControl.GetProductOrderByUnitInStock().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
+            }
+            else if (cb_ejercicios.Text == "Ejercicio 11")
+            {
+                dgv_ejercicios.DataSource = linqControl.GetProductsWithCategory().ToList();
+                dgv_ejercicios.Columns[2].Visible = false;
+                dgv_ejercicios.Columns[4].Visible = false;
+                dgv_ejercicios.Columns[5].Visible = false;
+                dgv_ejercicios.Columns[6].Visible = false;
+                dgv_ejercicios.Columns[7].Visible = false;
+                dgv_ejercicios.Columns[8].Visible = false;
+                dgv_ejercicios.Columns[9].Visible = false;
+                dgv_ejercicios.Columns[10].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
+                dgv_ejercicios.Columns[12].Visible = false;
+            }
+            else if (cb_ejercicios.Text == "Ejercicio 12")
+            {
+                dgv_ejercicios.DataSource = null;
+                dgv_ejercicios.DataSource = linqControl.GetFirstElementProducts().Take(1).ToList();
+                dgv_ejercicios.Columns[11].Visible = false;
+                dgv_ejercicios.Columns[12].Visible = false;
             }
 
         }

@@ -15,6 +15,7 @@ namespace Practica.EF.Logic.Control
         CustomersLogic customersLogic = new CustomersLogic();
         ProductsLogic productsLogic = new ProductsLogic();
         OrdersLogic ordersLogic = new OrdersLogic();
+
         //1
         public IEnumerable<Customers> GetCustomers()
         {
@@ -46,7 +47,7 @@ namespace Practica.EF.Logic.Control
         //4
         public IEnumerable<Customers> GetCustomersRegionWA()
         {
-            var query = customersLogic.GetAll().Where(c =>c.Region == "WA")
+            var query = customersLogic.GetAll().Where(c => c.Region == "WA")
                                               .OrderBy(c => c.ContactName)
                                               .Select(c => c);
             return query;
@@ -84,6 +85,48 @@ namespace Practica.EF.Logic.Control
         }
 
         //8
+        public IEnumerable<Customers> GetFirst3CustomersRegionWA()
+        {
+            var query = customersLogic.GetAll().Where(c => c.Region == "WA")
+                                              .OrderBy(c => c.CustomerID)
+                                              .Select(c => c);
+            return query;
+        }
+
+        //9
+        public IEnumerable<Products> GetProductOrderByName()
+        {
+            var query = productsLogic.GetAll().OrderBy(p => p.ProductName)
+                                               .Select(p => p);
+            return query;
+        }
+
+        //10
+        public IEnumerable<Products> GetProductOrderByUnitInStock()
+        {
+            var query = (from Products in productsLogic.GetAll()
+                         orderby Products.UnitsInStock descending
+                         select Products);
+            return query;
+        }
+
+        //11
+        public IEnumerable<Products> GetProductsWithCategory()
+        {
+            var query = (from Products in productsLogic.GetAll()
+                         orderby Products.ProductID ascending
+                         select Products);
+            return query;
+        }
+
+        //12
+        public IEnumerable<Products> GetFirstElementProducts()
+        {
+            var query = (from Products in productsLogic.GetAll()
+                         orderby Products.ProductID ascending
+                         select Products);
+            return query;
+        }
 
     }
 }

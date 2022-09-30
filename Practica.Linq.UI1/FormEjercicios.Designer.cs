@@ -50,8 +50,7 @@
             "Ejercicio 9",
             "Ejercicio 10",
             "Ejercicio 11",
-            "Ejercicio 12",
-            "Ejercicio 13"});
+            "Ejercicio 12"});
             this.cb_ejercicios.Location = new System.Drawing.Point(12, 12);
             this.cb_ejercicios.Name = "cb_ejercicios";
             this.cb_ejercicios.Size = new System.Drawing.Size(191, 21);
