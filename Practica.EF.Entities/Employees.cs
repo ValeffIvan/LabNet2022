@@ -16,6 +16,11 @@ namespace Practica.EF.Entities
             Territories = new HashSet<Territories>();
         }
 
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
+
         [Key]
         public int EmployeeID { get; set; }
 

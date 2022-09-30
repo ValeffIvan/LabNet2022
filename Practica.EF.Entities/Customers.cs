@@ -19,9 +19,8 @@ namespace Practica.EF.Entities
 
         public override string ToString()
         {
-            return $"CustomerID: {this.CustomerID }, Contact Name: {this.ContactName}, Company Name: {this.CompanyName}";
+            return ContactName;
         }
-
 
         [Key]
         [StringLength(5)]

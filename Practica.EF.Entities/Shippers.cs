@@ -14,6 +14,11 @@ namespace Practica.EF.Entities
             Orders = new HashSet<Orders>();
         }
 
+        public override string ToString()
+        {
+            return CompanyName;
+        }
+
         [Key]
         public int ShipperID { get; set; }
 

@@ -82,5 +82,8 @@ namespace Practica.EF.Logic.Control
                          select orders);
             return query;
         }
+
+        //8
+
     }
 }

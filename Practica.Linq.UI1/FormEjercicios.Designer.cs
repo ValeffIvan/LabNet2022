@@ -43,7 +43,8 @@
             "Ejercicio 3",
             "Ejercicio 4",
             "Ejercicio 5",
-            "Ejercicio 6",
+            "Ejercicio 6. Mayuscula",
+            "Ejercicio 6. Minuscula",
             "Ejercicio 7",
             "Ejercicio 8",
             "Ejercicio 9",
@@ -59,9 +60,14 @@
             // 
             // dgv_ejercicios
             // 
+            this.dgv_ejercicios.AllowUserToAddRows = false;
+            this.dgv_ejercicios.AllowUserToDeleteRows = false;
+            this.dgv_ejercicios.AllowUserToOrderColumns = true;
             this.dgv_ejercicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ejercicios.Location = new System.Drawing.Point(0, 49);
             this.dgv_ejercicios.Name = "dgv_ejercicios";
+            this.dgv_ejercicios.ReadOnly = true;
+            this.dgv_ejercicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ejercicios.Size = new System.Drawing.Size(800, 402);
             this.dgv_ejercicios.TabIndex = 1;
             // 
