@@ -26,10 +26,10 @@ namespace Practica.Linq.UI1
         {
             if (cb_ejercicios.Text == "Ejercicio 1")
             {
-                //NO FUNCA
-                //var oneCustomer ;
                 dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource = linqControl.GetCustomers().ToList().First();
+                dgv_ejercicios.DataSource = linqControl.GetCustomers().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 2")
             {
@@ -59,45 +59,51 @@ namespace Practica.Linq.UI1
             }
             else if (cb_ejercicios.Text == "Ejercicio 6. Mayuscula")
             {
-                var updatedItems = linqControl.GetCustomersName().Select(p => new Customers
+                try
                 {
-                    CustomerID = p.CustomerID,
-                    CompanyName = p.CompanyName,
-                    ContactTitle = p.ContactTitle,
-                    Address = p.Address,
-                    City = p.City,
-                    Region = p.Region,
-                    PostalCode = p.PostalCode,
-                    Country = p.Country,
-                    Phone = p.Phone,
-                    Fax = p.Fax,
-                    ContactName = p.ContactName.ToUpper(),
-                }).ToList();
-                dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource = updatedItems;
-                dgv_ejercicios.Columns[11].Visible = false;
-                dgv_ejercicios.Columns[12].Visible = false;
+                    var item = linqControl.GetCustomersName().ToList();
+                    item.ForEach(c =>
+                    {
+                        c.ContactName = c.ContactName.ToUpper();
+                    });
+                    dgv_ejercicios.DataSource = null;
+                    dgv_ejercicios.DataSource = item.ToList();
+                    dgv_ejercicios.Columns[11].Visible = false;
+                    dgv_ejercicios.Columns[12].Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos");
+                }
             }
             else if (cb_ejercicios.Text == "Ejercicio 6. Minuscula")
             {
-                var updatedItems = linqControl.GetCustomersName().Select(p => new Customers
+                try
                 {
-                    CustomerID = p.CustomerID,
-                    CompanyName = p.CompanyName,
-                    ContactTitle = p.ContactTitle,
-                    Address = p.Address,
-                    City = p.City,
-                    Region = p.Region,
-                    PostalCode = p.PostalCode,
-                    Country = p.Country,
-                    Phone = p.Phone,
-                    Fax = p.Fax,
-                    ContactName = p.ContactName.ToLower(),
-                }).ToList();
-                dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource = updatedItems.ToList();
-                dgv_ejercicios.Columns[11].Visible = false;
-                dgv_ejercicios.Columns[12].Visible = false;
+                    var item = linqControl.GetCustomersName().ToList();
+                    var updatedItems = item.Select(p => new Customers
+                    {
+                        CustomerID = p.CustomerID,
+                        CompanyName = p.CompanyName,
+                        ContactTitle = p.ContactTitle,
+                        Address = p.Address,
+                        City = p.City,
+                        Region = p.Region,
+                        PostalCode = p.PostalCode,
+                        Country = p.Country,
+                        Phone = p.Phone,
+                        Fax = p.Fax,
+                        ContactName = p.ContactName.ToLower(),
+                    }).ToList();
+                    dgv_ejercicios.DataSource = null;
+                    dgv_ejercicios.DataSource = updatedItems.ToList();
+                    dgv_ejercicios.Columns[11].Visible = false;
+                    dgv_ejercicios.Columns[12].Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos");
+                }
             }
             else if (cb_ejercicios.Text == "Ejercicio 7")
             {
@@ -109,7 +115,7 @@ namespace Practica.Linq.UI1
             {
                 var top3 = linqControl.GetFirst3CustomersRegionWA().Take(3);
                 dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource =top3.ToList();
+                dgv_ejercicios.DataSource = top3.ToList();
                 dgv_ejercicios.Columns[12].Visible = false;
                 dgv_ejercicios.Columns[11].Visible = false;
             }
@@ -120,10 +126,10 @@ namespace Practica.Linq.UI1
                 dgv_ejercicios.Columns[12].Visible = false;
                 dgv_ejercicios.Columns[11].Visible = false;
             }
-            else if(cb_ejercicios.Text == "Ejercicio 10")
+            else if (cb_ejercicios.Text == "Ejercicio 10")
             {
                 dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource= linqControl.GetProductOrderByUnitInStock().ToList();
+                dgv_ejercicios.DataSource = linqControl.GetProductOrderByUnitInStock().ToList();
                 dgv_ejercicios.Columns[12].Visible = false;
                 dgv_ejercicios.Columns[11].Visible = false;
             }

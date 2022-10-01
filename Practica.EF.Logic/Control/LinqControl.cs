@@ -20,8 +20,7 @@ namespace Practica.EF.Logic.Control
         public IEnumerable<Customers> GetCustomers()
         {
             var query = (from Customers in customersLogic.GetAll()
-                         where Customers.CustomerID == "ANTON"
-                         orderby Customers.CustomerID descending
+                         orderby Customers.CustomerID ascending
                          select Customers);
             return query;
 
