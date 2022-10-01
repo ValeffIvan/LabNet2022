@@ -128,5 +128,6 @@ namespace Practica.EF.Logic.Control
             return query;
         }
 
+
     }
 }

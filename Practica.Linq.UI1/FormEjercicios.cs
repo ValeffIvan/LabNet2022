@@ -26,7 +26,7 @@ namespace Practica.Linq.UI1
         {
             if (cb_ejercicios.Text == "Ejercicio 1")
             {
-
+                //NO FUNCA
                 //var oneCustomer ;
                 dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetCustomers().ToList().First();
@@ -35,16 +35,22 @@ namespace Practica.Linq.UI1
             {
                 dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetProductsWithoutStock().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 3")
             {
                 dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetProductsWithStock3Units().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 4")
             {
                 dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = linqControl.GetCustomersRegionWA().ToList();
+                dgv_ejercicios.Columns[12].Visible = false;
+                dgv_ejercicios.Columns[11].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 5")
             {
@@ -53,28 +59,28 @@ namespace Practica.Linq.UI1
             }
             else if (cb_ejercicios.Text == "Ejercicio 6. Mayuscula")
             {
-                var updatedItems = linqControl.GetCustomersName().ToList().Select(p => new Customers
+                var updatedItems = linqControl.GetCustomersName().Select(p => new Customers
                 {
-                    CustomerID= p.CustomerID,
-                    CompanyName =p.CompanyName,
+                    CustomerID = p.CustomerID,
+                    CompanyName = p.CompanyName,
                     ContactTitle = p.ContactTitle,
                     Address = p.Address,
-                    City =p.City,
+                    City = p.City,
                     Region = p.Region,
                     PostalCode = p.PostalCode,
                     Country = p.Country,
                     Phone = p.Phone,
-                    Fax  = p.Fax,
+                    Fax = p.Fax,
                     ContactName = p.ContactName.ToUpper(),
-                });
+                }).ToList();
                 dgv_ejercicios.DataSource = null;
-                dgv_ejercicios.DataSource = updatedItems.ToList();
+                dgv_ejercicios.DataSource = updatedItems;
                 dgv_ejercicios.Columns[11].Visible = false;
                 dgv_ejercicios.Columns[12].Visible = false;
             }
             else if (cb_ejercicios.Text == "Ejercicio 6. Minuscula")
             {
-                var updatedItems = linqControl.GetCustomersName().ToList().Select(p => new Customers
+                var updatedItems = linqControl.GetCustomersName().Select(p => new Customers
                 {
                     CustomerID = p.CustomerID,
                     CompanyName = p.CompanyName,
@@ -87,7 +93,7 @@ namespace Practica.Linq.UI1
                     Phone = p.Phone,
                     Fax = p.Fax,
                     ContactName = p.ContactName.ToLower(),
-                });
+                }).ToList();
                 dgv_ejercicios.DataSource = null;
                 dgv_ejercicios.DataSource = updatedItems.ToList();
                 dgv_ejercicios.Columns[11].Visible = false;
