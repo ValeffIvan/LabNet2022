@@ -11,10 +11,12 @@ namespace Practica.MVC.Controllers
 {
     public class ShippersController : Controller
     {
+        ShippersLogic logic = new ShippersLogic();
+
         // GET: Shippers
         public ActionResult Index()
         {
-            var logic = new ShippersLogic();
+
             List<Shippers> shippers = logic.GetAll();
 
             List<ShippersView> shippersView = shippers.Select(s => new ShippersView
@@ -25,7 +27,31 @@ namespace Practica.MVC.Controllers
             }).ToList();
             return View(shippersView);
         }
-        
 
+
+        public ActionResult Insert ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Insert (ShippersView shippersView)
+        {
+            try
+            {
+                var shipperEntity = new Shippers
+                {
+                    ShipperID = shippersView.ShipperID,
+                    CompanyName = shippersView.CompanyName,
+                    Phone = shippersView.Phone
+                };
+                logic.Add(shipperEntity);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index","Error");
+            }
+        }
     }
 }

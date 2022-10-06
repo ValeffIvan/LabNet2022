@@ -1,0 +1,12 @@
+﻿@model Practica.MVC.Models.ShippersView
+@{
+    ViewBag.Title = "Shippers Page";
+}
+
+<h1>Insertar Shipper</h1>
+
+@using (Html.BeginForm("Insert","Shippers",FormMethod.Post))
+{
+    <label>Company Name</label>@Html.TextBoxFor(r => r.CompanyName)
+    <input type="submit" class="btn_success" value="Guardar" />    
+}
