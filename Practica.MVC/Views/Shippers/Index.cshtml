@@ -1,0 +1,23 @@
+﻿@model List<Practica.MVC.Models.ShippersView>
+
+@{
+    ViewBag.Title = "Shippers Page";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var shipper in Model)
+    {
+        <tr>
+            <th scope="row">@shipper.ShipperID</th>
+            <td>@shipper.CompanyName</td>
+            <td>@shipper.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>
