@@ -1,20 +1,20 @@
-﻿using Practica.EF.Data;
-using Practica.EF.Entities;
+﻿using Practica.EF.Entities;
 using Practica.EF.Exceptions;
 using Practica.EF.Logic.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Practica.EF.Logic.Logic
 {
-    public class ShippersLogic : BaseLogic
+    public class RegionLogic : BaseLogic
     {
-        public string Add(Shippers aux)
+        public string Add(Region aux)
         {
-            context.Shippers.Add(aux);
+            context.Region.Add(aux);
             context.SaveChanges();
             return "Shippers Added";
         }
@@ -23,8 +23,8 @@ namespace Practica.EF.Logic.Logic
         {
             try
             {
-                var shippersDelete = context.Shippers.First(r => r.ShipperID == id);
-                context.Shippers.Remove(shippersDelete);
+                var regionDelete = context.Region.First(r => r.RegionID == id);
+                context.Region.Remove(regionDelete);
                 context.SaveChanges();
                 return "Se ha eliminado con exito";
             }
@@ -35,23 +35,22 @@ namespace Practica.EF.Logic.Logic
             }
         }
 
-        public List<Shippers> GetAll()
+        public List<Region> GetAll()
         {
-            return context.Shippers.ToList();
+            return context.Region.ToList();
         }
 
-        public void Update(Shippers shippers)
+        public void Update(Region region)
         {
             try
             {
-                var shippersUpdate = context.Shippers.Find(shippers.ShipperID);
-                shippersUpdate.Phone = shippers.Phone;
-                shippersUpdate.CompanyName = shippers.CompanyName;
+                var regionUpdate = context.Region.Find(region.RegionID);
+                regionUpdate.RegionDescription = region.RegionDescription;
                 context.SaveChanges();
             }
             catch (Exception ex)
             {
-                
+
             }
         }
     }

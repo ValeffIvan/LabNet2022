@@ -1,4 +1,5 @@
 ﻿@model Practica.MVC.Models.ShippersView
+
 @{
     ViewBag.Title = "Shippers Page";
 }
@@ -7,10 +8,27 @@
 
 @using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
 {
-    <label>Company Name: </label>@Html.TextBoxFor(r => r.CompanyName)
+    <label>Company Name: </label>
+    @Html.TextBoxFor(r => r.CompanyName)
     <br>
-    <label>Phone: </label>@Html.TextBoxFor(r => r.Phone)
-    
+    <label>Telegono: </label>
+    @Html.TextBoxFor(r => r.Phone)
+    <br>
     <input type="submit" class="btn_success" value="Guardar" />
+}
 
+<h1>Modificar Shipper</h1>
+
+@using (Html.BeginForm("Update", "Shippers", FormMethod.Post))
+{
+    <label>Id: </label>
+    @Html.TextBoxFor(r => r.ShipperID);
+    <br>
+    <label>Nombre de la compania:  </label>
+    @Html.TextBoxFor(r => r.CompanyName)
+    <br>
+    <label>Telefono:  </label>
+    @Html.TextBoxFor(r => r.Phone)
+    <br>
+    <input type="submit" class="btn_success" value="Guardar" />
 }

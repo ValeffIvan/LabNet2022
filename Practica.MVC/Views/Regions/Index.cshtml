@@ -1,0 +1,29 @@
+﻿@model List<Practica.MVC.Models.RegionsView>
+
+@{
+    ViewBag.Title = "Regions Page";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var regions in Model)
+        {
+            <tr>
+                <th scope="row">@regions.RegionID</th>
+                <td>@regions.RegionDescription</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Insertar nueva region", "Insert", "Shippers")
+    <br />
+    <br />
+    @Html.ActionLink("Eliminar Region", "Insert", "Shippers")
+</div>

@@ -53,5 +53,29 @@ namespace Practica.MVC.Controllers
                 return RedirectToAction("Index","Error");
             }
         }
+
+        public ActionResult Update()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Update(ShippersView shippersView)
+        {
+            try
+            {
+
+                var shippersUpdate = new Shippers();
+                shippersUpdate.ShipperID = shippersView.ShipperID;
+                shippersUpdate.CompanyName = shippersView.CompanyName;
+                shippersUpdate.Phone = shippersView.Phone;
+                logic.Update(shippersUpdate);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
     }
 }
