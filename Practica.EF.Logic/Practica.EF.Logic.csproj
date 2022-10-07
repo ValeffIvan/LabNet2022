@@ -57,7 +57,6 @@
     <Compile Include="Control\RegionControl.cs" />
     <Compile Include="Control\ShippersControl.cs" />
     <Compile Include="Control\SuppliersControl.cs" />
-    <Compile Include="ExtensionMethods\LengthExtension.cs" />
     <Compile Include="Logic\CustomersLogic.cs" />
     <Compile Include="Logic\RegionLogic.cs" />
     <Compile Include="Logic\ShippersLogic.cs" />
