@@ -276,6 +276,7 @@
     <Content Include="Views\Shippers\Insert.cshtml" />
     <Content Include="Views\Error\View.cshtml" />
     <Content Include="Views\Regions\Index.cshtml" />
+    <Content Include="Views\Regions\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,45 @@
+﻿@model Practica.MVC.Models.RegionsView
+
+@{
+    ViewBag.Title = "Region Page";
+}
+
+<h1>Insertar Region</h1>
+
+@using (Html.BeginForm("Insert", "Regions", FormMethod.Post))
+{
+    <label>ID de la region: </label>
+    <br />
+    @Html.TextBoxFor(r => r.RegionID)
+    <br>
+    <label>Descripcion de la region: </label>
+    <br />
+    @Html.TextBoxFor(r => r.RegionDescription)
+    <br>
+    <br />
+    <input type="submit" class="btn_success" value="Guardar" />
+}
+<br />
+<br />
+
+<h1>Modificar Region</h1>
+
+@using (Html.BeginForm("Update", "Shippers", FormMethod.Post))
+{
+    <label>Id de la region: </label>
+    <br />
+    @Html.TextBoxFor(r => r.RegionID);
+    <br />
+    <label>Nombre de la compania:  </label>
+    <br />
+    @Html.TextBoxFor(r => r.RegionDescription)
+    <br />
+    <br />
+    <input type="submit" class="btn_success" value="Guardar" />
+}
+<br />
+<br />
+<div>
+    @Html.ActionLink("Volver", "Index", "Regions")
+
+</div>
