@@ -4,6 +4,7 @@ using Practica.MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -41,8 +42,15 @@ namespace Practica.MVC.Controllers
                     RegionID = regionsView.RegionID,
                     RegionDescription = regionsView.RegionDescription,
                 };
-                logic.Add(regionEntity);
-                return RedirectToAction("Index");
+                if (CorroborarRegion(regionEntity))
+                {
+                    logic.Add(regionEntity);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    throw new Exception();                        
+                }
             }
             catch (Exception ex)
             {
@@ -60,18 +68,35 @@ namespace Practica.MVC.Controllers
         {
             try
             {
-
                 var regionUpdate = new Region();
                 regionUpdate.RegionID = regionsView.RegionID;
                 regionUpdate.RegionDescription = regionsView.RegionDescription;
-                logic.Update(regionUpdate);
-                return RedirectToAction("Index");
+                if (CorroborarRegion(regionUpdate))
+                {
+                    logic.Update(regionUpdate);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
             catch (Exception ex)
             {
                 return RedirectToAction("Index", "Error");
             }
         }
-
+        
+        public bool CorroborarRegion (Region region)
+        {
+            if (!(region.RegionID.ToString().Any(char.IsDigit)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

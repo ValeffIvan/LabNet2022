@@ -45,12 +45,20 @@ namespace Practica.MVC.Controllers
                     CompanyName = shippersView.CompanyName,
                     Phone = shippersView.Phone
                 };
-                logic.Add(shipperEntity);
-                return RedirectToAction("Index");
+                if (CorroborarShipper(shipperEntity))
+                {
+                    logic.Add(shipperEntity);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index","Error");
+                return RedirectToAction("Index", "Error");
             }
         }
 
@@ -69,12 +77,32 @@ namespace Practica.MVC.Controllers
                 shippersUpdate.ShipperID = shippersView.ShipperID;
                 shippersUpdate.CompanyName = shippersView.CompanyName;
                 shippersUpdate.Phone = shippersView.Phone;
-                logic.Update(shippersUpdate);
-                return RedirectToAction("Index");
+                if (CorroborarShipper(shippersUpdate))
+                {
+                    logic.Update(shippersUpdate);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Error");
+                return RedirectToAction("Index","Error");
+            }
+        }
+
+
+        public bool CorroborarShipper (Shippers shippers)
+        {
+            if (shippers.Phone.Any(char.IsDigit) && shippers.ShipperID.ToString().Any(char.IsDigit))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
