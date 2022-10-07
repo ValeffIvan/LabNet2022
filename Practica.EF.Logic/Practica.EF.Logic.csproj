@@ -54,6 +54,7 @@
     <Compile Include="Bases\BaseLogic.cs" />
     <Compile Include="Bases\ILogic.cs" />
     <Compile Include="Control\CustomersControl.cs" />
+    <Compile Include="Control\ShippersControl.cs" />
     <Compile Include="Control\SuppliersControl.cs" />
     <Compile Include="ExtensionMethods\LengthExtension.cs" />
     <Compile Include="Logic\CustomersLogic.cs" />

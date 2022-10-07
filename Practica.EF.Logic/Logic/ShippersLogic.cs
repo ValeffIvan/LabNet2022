@@ -1,5 +1,6 @@
 ﻿using Practica.EF.Data;
 using Practica.EF.Entities;
+using Practica.EF.Exceptions;
 using Practica.EF.Logic.Bases;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,25 @@ namespace Practica.EF.Logic.Logic
     {
         public string Add(Shippers aux)
         {
-            throw new NotImplementedException();
+            context.Shippers.Add(aux);
+            context.SaveChanges();
+            return "Shippers Added";
         }
 
-        public string Delete(int aux)
+        public string Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var shippersDelete = context.Shippers.First(r => r.ShipperID == id);
+                context.Shippers.Remove(shippersDelete);
+                context.SaveChanges();
+                return "Se ha eliminado con exito";
+            }
+            catch (Exception ex)
+            {
+                ForeignKeyException foreignKeyException = new ForeignKeyException("Error");
+                return foreignKeyException.Message;
+            }
         }
 
         public List<Shippers> GetAll()
@@ -26,9 +40,20 @@ namespace Practica.EF.Logic.Logic
             return context.Shippers.ToList();
         }
 
-        public string Update(Shippers aux)
+        public string Update(Shippers shippers)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var shippersUpdate = context.Shippers.Find(shippers.ShipperID);
+                shippersUpdate.Phone = shippers.Phone;
+                shippersUpdate.CompanyName = shippers.CompanyName;
+                context.SaveChanges();
+                return "Shipper update";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }
