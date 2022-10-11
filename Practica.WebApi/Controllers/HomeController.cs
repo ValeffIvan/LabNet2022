@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
+using Practica.WebApi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -16,8 +19,9 @@ namespace Practica.WebApi.Controllers
             //https://jsonplaceholder.typicode.com/todos/1
             var httpClient = new HttpClient();
             var json = await httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/todos/1");
+            var algo = JsonConvert.DeserializeObject<Todo>(json);
 
-            return View();
+            return View(algo);
         }
     }
 }
