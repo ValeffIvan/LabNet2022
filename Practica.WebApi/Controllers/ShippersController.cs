@@ -26,7 +26,7 @@ namespace Practica.WebApi.Controllers
                 return result;
             }
 
-            // GET: api/Shippers/5
+            // GET: api/Shippers/1
             [HttpGet]
             public ShippersView Get(int id)
             {
