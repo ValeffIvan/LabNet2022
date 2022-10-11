@@ -48,7 +48,6 @@ namespace Practica.WebApi.Controllers
             }
         }
 
-
         // POST: api/Shippers
         [HttpPost]
         public void Post(Shippers shipper)
@@ -66,6 +65,7 @@ namespace Practica.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                BadRequest();
             }
         }
     }
