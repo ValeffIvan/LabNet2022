@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShippersComponent } from './shippers/shippers.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
+import { ShippinglistComponent } from './shippinglist/shippinglist.component';
+import { ShipperscomandComponent } from './shipperscomand/shipperscomand.component';
+import {MatTabsModule} from '@angular/material/tabs'; 
 
 
 @NgModule({
   declarations: [
-    ShippersComponent
+    ShippinglistComponent,
+    ShipperscomandComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatTabsModule
   ]
 })
 export class DatosapiModule { }

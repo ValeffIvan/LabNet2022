@@ -1,0 +1,22 @@
+<mat-tab-group>
+    <mat-tab label="First"> 
+    <div class="col-sm-6">
+        <select class="form-control" id="idShipper" *ngFor="let shipper of shipperslist">
+            <option>{{shipper.id}}</option>
+        </select>
+        <label for="companyName" class="form-label">Company Name</label>
+        <input type="text" class="form-control" id="companyName" placeholder="" value="" required="">
+        <div class="invalid-feedback">
+            Valid Company Name is required.
+        </div>
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" placeholder="" value="" required="">
+        <div class="invalid-feedback">
+            Valid Phone is required.
+        </div>
+    </div>
+    </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+  
