@@ -5,14 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ShippersComponent } from './datosapi/shippers/shippers.component';
+import { DatosapiModule } from './datosapi/datosapi.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShippersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DatosapiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
