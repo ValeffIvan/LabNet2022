@@ -9,6 +9,9 @@ import { ShippersService } from '../services/shippers.service';
   styleUrls: ['./modificar.component.scss']
 })
 export class ModificarComponent implements OnInit {
+  companyName = new FormControl ('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
+  phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
+  ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator]);
   public shipperslist: Array<Shipper> =[];
   public shipperunico = new Shipper;
   public phoneid = document.getElementById('phone');
