@@ -9,7 +9,7 @@ import { Shipper } from '../models/Shipper';
 })
 export class ShippersService {
 
-  endpoint: string = 'shipper';
+  endpoint: string = '/Shippers';
 
   constructor(private http:HttpClient) { }
 

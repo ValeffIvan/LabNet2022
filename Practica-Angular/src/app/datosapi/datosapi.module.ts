@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShippinglistComponent } from './shippinglist/shippinglist.component';
 import { ShipperscomandComponent } from './shipperscomand/shipperscomand.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatCardModule} from '@angular/material/card'; 
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ]
 })
 export class DatosapiModule { }

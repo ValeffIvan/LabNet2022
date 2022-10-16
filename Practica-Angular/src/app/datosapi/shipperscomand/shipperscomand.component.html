@@ -1,22 +1,86 @@
 <mat-tab-group>
     <mat-tab label="First"> 
-    <div class="col-sm-6">
-        <select class="form-control" id="idShipper" *ngFor="let shipper of shipperslist">
-            <option>{{shipper.ShipperID}}</option>
-        </select>
-        <label for="companyName" class="form-label">Company Name</label>
-        <input type="text" class="form-control" id="companyName" placeholder="" value="" required="">
-        <div class="invalid-feedback">
-            Valid Company Name is required.
-        </div>
-        <label for="phone" class="form-label">Phone</label>
-        <input type="text" class="form-control" id="phone" placeholder="" value="" required="">
-        <div class="invalid-feedback">
-            Valid Phone is required.
+    <br>
+    <div class="container">
+        <div class="abs-center">
+            <form action="#" class="border p-3 form" [formGroup]="form">
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" name="companyName" id="companyName" class="form-control">
+                    <div class="invalid-feedback">
+                        Valid Company Name is required.
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" class="form-control">
+                    <div class="invalid-feedback">
+                        Valid Company Name is required.
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
+                <button type="reset" class="btn btn-primary" id="limpiar">Borrar</button>
+            </form>
         </div>
     </div>
+<!--
+    <div class="col-sm-6">
+        <form action="" [formGroup]="form" >
+            <br>
+            <mat-card-title>Ingrese un Shipper para registrar</mat-card-title>
+            <br>
+            <br>
+            <label for="companyName" class="form-label">Company Name</label>
+            <input formControlName="companyName" type="text" class="form-control" id="companyName" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+                Valid Company Name is required.
+            </div>
+            <label for="phone" class="form-label">Phone</label>
+            <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+                Valid Phone is required.
+            </div>
+        </form>
+    </div>
+    -->
     </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Second"> 
+        <div class="container">
+            <div class="abs-center">
+                <form action="#" class="border p-3 form" [formGroup]="form">
+                    <div class="dropdown">
+                        <select class="form-select" id="shipperID" required="" *ngFor="let shipper of shipperslist">
+                            <option value="">Choose...</option>
+                            <option>{{shipper.ShipperID}}</option>
+                          </select>
+                      </div>
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" name="companyName" id="companyName" class="form-control">
+                        <div class="invalid-feedback">
+                            Valid Company Name is required.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone" id="phone" class="form-control">
+                        <div class="invalid-feedback">
+                            Valid Company Name is required.
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Borrar Shipper</button>
+    
+                    <button type="submit" class="btn btn-primary" id="limpiar">Modificar Shipper</button>
+                
+                    <button type="reset" class="btn btn-primary" id="limpiar">Limpiar datos</button>
+                </form>
+            </div>
+        </div>
+    </mat-tab>
   </mat-tab-group>
   

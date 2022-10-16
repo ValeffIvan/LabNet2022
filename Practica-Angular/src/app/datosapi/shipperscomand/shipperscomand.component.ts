@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Shipper } from '../models/Shipper';
 import { ShippersService } from '../services/shippers.service';
 
@@ -10,7 +10,15 @@ import { ShippersService } from '../services/shippers.service';
 })
 export class ShipperscomandComponent implements OnInit {
   public shipperslist: Array<Shipper> =[];
-  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {        
+
+  form = new FormGroup(
+    {
+      companyName: new FormControl(''),
+      phone:new FormControl('')      
+    }
+  );
+  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {   
+
   }
 
   ngOnInit(): void

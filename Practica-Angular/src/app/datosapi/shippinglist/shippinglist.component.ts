@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Shipper } from '../models/Shipper';
+import { ShippersService } from '../services/shippers.service';
 
 @Component({
   selector: 'app-shippinglist',
@@ -6,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shippinglist.component.scss']
 })
 export class ShippinglistComponent implements OnInit {
+  public shipperslist: Array<Shipper> =[];
+  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) { }
 
-  constructor() { }
+  
+  ngOnInit(): void
+  {
+    this.obtenerShippers();
 
-  ngOnInit(): void {
   }
+  obtenerShippers()
+  {
+    this.shippersService.obtenerShippers().subscribe (res => {
+      this.shipperslist= res;
+    })
+  }
+
+  guardarShipper()
+  {
+    var shipper = new Shipper()
+  }
+
 
 }
