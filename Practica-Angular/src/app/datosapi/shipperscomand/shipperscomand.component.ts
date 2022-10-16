@@ -9,12 +9,20 @@ import { ShippersService } from '../services/shippers.service';
   styleUrls: ['./shipperscomand.component.scss']
 })
 export class ShipperscomandComponent implements OnInit {
-
-  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {    
-    shipperslist: this.shippersService.obtenerShippers()
+  public shipperslist: Array<Shipper> =[];
+  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {        
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    this.obtenerShippers();
+
+  }
+  obtenerShippers()
+  {
+    this.shippersService.obtenerShippers().subscribe (res => {
+      this.shipperslist= res;
+    })
   }
 
   guardarShipper()

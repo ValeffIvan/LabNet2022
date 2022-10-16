@@ -18,7 +18,7 @@ export class ShippersService {
     return this.http.post(url,shipperRequest);
   }
 
-  public obtenerShippers (): Observable<any>{
+  public obtenerShippers (): Observable<Shipper[]>{
     let url =environment.apiShippers + this.endpoint;
     return this.http.get<Array<Shipper>>(url);
   }
