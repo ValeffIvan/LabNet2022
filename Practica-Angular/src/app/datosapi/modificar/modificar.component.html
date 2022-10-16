@@ -5,7 +5,7 @@
             <label for="ShipperID">Shipper ID</label>
             <input matInput type="number" [formControl]="ShipperID" (keyup)="obtenerShippersConId()" name="ShipperID" id="ShipperID" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1');" placeholder="ShipperID">
             <mat-error  *ngIf="ShipperID.invalid">
-                Valid Shipper ID is required.
+                Se requiere un Shipper ID valido.
             </mat-error>
             <br>
           </div>  
@@ -13,7 +13,7 @@
                 <label for="companyName">Company Name</label>
                 <input matInput  type="text" [formControl]="companyName" name="companyName" id="companyName" class="form-control" placeholder="CompanyName">
                 <mat-error  *ngIf="companyName.invalid">
-                    Valid Company Name is required.
+                    Se requiere un Company Name valido.
                 </mat-error>
             </div>
             <br>
@@ -21,7 +21,7 @@
                 <label for="phone">Phone</label>
                 <input matInput [formControl]="phone" type="text" name="phone" id="phone" class="form-control" placeholder="Phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1');">
                 <mat-error *ngIf="phone.invalid">
-                    Valid Phone is required.
+                    Se requiere un Phone valido.
                   </mat-error>
             </div>
             <br>    
