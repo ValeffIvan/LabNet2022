@@ -4,11 +4,11 @@ import { Shipper } from '../models/Shipper';
 import { ShippersService } from '../services/shippers.service';
 
 @Component({
-  selector: 'app-shippinglist',
-  templateUrl: './shippinglist.component.html',
-  styleUrls: ['./shippinglist.component.scss']
+  selector: 'app-shipperslist',
+  templateUrl: './shipperslist.component.html',
+  styleUrls: ['./shipperslist.component.scss']
 })
-export class ShippinglistComponent implements OnInit {
+export class ShipperslistComponent implements OnInit {
   public shipperslist: Array<Shipper> =[];
   constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) { }
 

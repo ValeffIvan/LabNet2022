@@ -4,16 +4,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 
-import { ShippinglistComponent } from './shippierslist/shippinglist.component';
+import { ShipperslistComponent } from './shipperslist/shipperslist.component';
 import { ShipperscomandComponent } from './shipperscomand/shipperscomand.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import { AgregarComponent } from './agregar/agregar.component';
+import { ModificarComponent } from './modificar/modificar.component';
+import { EliminarComponent } from './eliminar/eliminar.component'; 
 
 
 @NgModule({
   declarations: [
-    ShippinglistComponent,
-    ShipperscomandComponent
+    ShipperslistComponent,
+    ShipperscomandComponent,
+    AgregarComponent,
+    ModificarComponent,
+    EliminarComponent
   ],
   imports: [
     CommonModule,

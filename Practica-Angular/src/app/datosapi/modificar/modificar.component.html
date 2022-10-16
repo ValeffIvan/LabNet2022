@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="abs-center">
+        <form action="#" class="border p-3 form" [formGroup]="form">
+            <mat-form-field appearance="fill">
+                <mat-label>Shipper ID</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let shipper of shipperslist" [value]="shipper.ShipperID" onclick="obtenerShippersConId(shipper.ShipperID)"> 
+                    {{shipper.ShipperID}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" name="companyName" id="companyName" class="form-control" placeholder="CompanyName">
+                <div class="invalid-feedback">
+                    Valid Company Name is required.
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
+                <div class="invalid-feedback">
+                    Valid Company Name is required.
+                </div>
+            </div>
+            <br>    
+            <button type="submit" class="btn btn-primary">Modificar Shipper</button>
+        
+            <button type="reset" class="btn btn-primary" id="limpiar">Limpiar datos</button>
+        </form>
+    </div>
+</div>

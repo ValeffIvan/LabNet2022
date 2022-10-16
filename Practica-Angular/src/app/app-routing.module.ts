@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ShipperscomandComponent } from './datosapi/shipperscomand/shipperscomand.component';
-import { ShippinglistComponent } from './datosapi/shippierslist/shippinglist.component';
+import { ShipperslistComponent } from './datosapi/shipperslist/shipperslist.component';
 
 const routes: Routes = [
   {
     path: 'shipperslist',
-    component: ShippinglistComponent
+    component: ShipperslistComponent
   },
   {
     path: 'shipperscomand',

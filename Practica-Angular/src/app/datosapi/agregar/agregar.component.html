@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="abs-center">
+        <form action="#" class="border p-3 form" [formGroup]="form">
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input formControlName="companyName" type="text" name="companyName" id="companyName" class="form-control" placeholder="Company Name">
+                <div class="invalid-feedback">
+                    Valid Company Name is required.
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input formControlName="phone" type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
+                <div class="invalid-feedback">
+                    Valid Company Name is required.
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <button type="reset" class="btn btn-primary" id="espacio">Borrar</button>
+        </form>
+    </div>
+</div>
