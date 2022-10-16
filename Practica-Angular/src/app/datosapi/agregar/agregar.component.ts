@@ -26,10 +26,6 @@ constructor(private formBuilder:FormBuilder,private shippersService : ShippersSe
 
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      companyName:['',[Validators.required, Validators.minLength(1)]],
-      phone:['',[Validators.required, Validators.minLength(10), Validators.pattern(this.phonevalidator)]],
-    });
   }
 
   cargarShipper()
