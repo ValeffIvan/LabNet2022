@@ -4,7 +4,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Shipper ID</mat-label>
                 <mat-select>
-                  <mat-option *ngFor="let shipper of shipperslist" [value]="shipper.ShipperID" onclick="obtenerShippersConId(shipper.ShipperID)"> 
+                  <mat-option *ngFor="let shipper of shipperslist" [value]="shipper.ShipperID" (click)="obtenerShippersConId(shipper.ShipperID)"> 
                     {{shipper.ShipperID}}
                   </mat-option>
                 </mat-select>
@@ -25,9 +25,9 @@
                 </div>
             </div>
             <br>    
-            <button type="submit" class="btn btn-primary">Modificar Shipper</button>
+            <button type="submit" class="btn btn-primary" (click)="updateShipper()">Modificar Shipper</button>
         
-            <button type="reset" class="btn btn-primary" id="limpiar">Limpiar datos</button>
+            <button type="reset" class="btn btn-primary" id="espacio">Limpiar datos</button>
         </form>
     </div>
 </div>

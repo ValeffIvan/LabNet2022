@@ -22,13 +22,13 @@
               <mat-form-field appearance="fill">
                 <mat-label>Shipper ID</mat-label>
                 <mat-select>
-                  <mat-option *ngFor="let shipper of shipperslist" [value]="shipper.ShipperID"> 
+                  <mat-option *ngFor="let shipper of shipperslist" [value]="shipper.ShipperID" name="id"> 
                     {{shipper.ShipperID}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             <br>
-            <button type="submit" class="btn btn-primary">Borrar Shipper</button>
+            <button type="submit" class="btn btn-primary" (click)="eliminarShipper()">Borrar Shipper</button>
         </form>
     </div>
 </div>

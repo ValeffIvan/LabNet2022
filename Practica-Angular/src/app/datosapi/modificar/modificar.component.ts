@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Shipper } from '../models/Shipper';
 import { ShippersService } from '../services/shippers.service';
 
@@ -28,8 +28,8 @@ export class ModificarComponent implements OnInit {
   ngOnInit(): void
   {
     this.form = this.formBuilder.group({
-      companyName:[''],
-      phone:[''],
+      companyName:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
+      phone:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
     });
     this.obtenerShippers();
 
@@ -55,4 +55,13 @@ export class ModificarComponent implements OnInit {
     }
   }
   
+  updateShipper ()
+  {
+    let shipper=new Shipper();
+    shipper.CompanyName= this.form.get('companyName')!.value;
+    shipper.Phone= this.form.get('phone')!.value;
+    this.shippersService.eliminarShipper(shipper.ShipperID);
+    this.shippersService.crearShipper(shipper);
+  }
+
 }

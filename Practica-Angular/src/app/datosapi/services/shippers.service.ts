@@ -28,5 +28,9 @@ export class ShippersService {
     let url =environment.apiShippers + this.endpoint +"/"+id;
     return this.http.get<Shipper>(url);
   }
-
+  public eliminarShipper(id:number):Observable<Shipper>
+  {
+    let url =environment.apiShippers + this.endpoint +"/"+id;
+    return this.http.delete<Shipper>(url);
+  }
 }
