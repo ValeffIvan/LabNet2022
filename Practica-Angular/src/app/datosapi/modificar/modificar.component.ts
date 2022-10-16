@@ -9,11 +9,13 @@ import { ShippersService } from '../services/shippers.service';
   styleUrls: ['./modificar.component.scss']
 })
 export class ModificarComponent implements OnInit {
-  private phonevalidator:string ='(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})';
+  phonevalidator:string ='(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})';
+  shipperIDvalidator:string =('^[0-9]+$');
   companyName = new FormControl ('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
-  public shipperslist: Array<Shipper> =[];
   phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator,Validators.pattern(this.phonevalidator)]);
-  
+  get f(){return this.form.controls;}
+  public shipperslist: Array<Shipper> =[];
+  private maximo:number = this.shipperslist.length;
   public shipperunico = new Shipper;
   public phoneid = document.getElementById('phone');
   public companyNameid = document.getElementById('companyName')
@@ -24,18 +26,18 @@ export class ModificarComponent implements OnInit {
       phone:new FormControl('')      
     }
   );
+
   constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) { 
     
   }
-  shipperIDvalidator:string =('^[0-9]+$');
-  get f(){return this.form.controls;}
-  ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator,Validators.pattern(this.shipperIDvalidator)]);
+  
+  ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator,Validators.maxLength(this.maximo), Validators.pattern(this.shipperIDvalidator)]);
   ngOnInit(): void
   {
     this.form = this.formBuilder.group({
       ShipperID : [''],
       companyName:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
-      phone:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
+      phone:['',[Validators.required, Validators.minLength(1), Validators.nullValidator, Validators.maxLength(this.maximo)]],
     });
     this.obtenerShippers();
 
