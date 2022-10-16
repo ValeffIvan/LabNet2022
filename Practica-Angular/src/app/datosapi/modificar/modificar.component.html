@@ -25,7 +25,7 @@
                   </mat-error>
             </div>
             <br>    
-            <button type="submit" class="btn btn-primary" (click)="updateShipper()">Modificar Shipper</button>
+            <button type="submit" class="btn btn-primary" [disabled]="(companyName.invalid || phone.invalid)" (click)="updateShipper()">Modificar Shipper</button>
         
             <button type="reset" class="btn btn-primary" id="espacio">Limpiar datos</button>
         </form>
