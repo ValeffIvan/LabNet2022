@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,11 +11,12 @@ import { ExtraboxComponent } from './modulosextras/extrabox/extrabox.component';
 import { NavVarComponent } from './modulosextras/nav-var/nav-var.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavVarComponent,
-    ExtraboxComponent
+    ExtraboxComponent,
 
   ],
   imports: [
@@ -23,6 +25,7 @@ import { NavVarComponent } from './modulosextras/nav-var/nav-var.component';
     BrowserAnimationsModule,
     DatosapiModule,
     ReactiveFormsModule,
+    MatCardModule
 
   ],
   providers: [],
