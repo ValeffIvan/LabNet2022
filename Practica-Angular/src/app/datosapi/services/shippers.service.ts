@@ -9,7 +9,7 @@ import { Shipper } from '../models/Shipper';
 })
 export class ShippersService {
 
-  endpoint: string = '/Shippers';
+  endpoint: string = 'Shippers';
 
   constructor(private http:HttpClient) { }
 
@@ -18,9 +18,15 @@ export class ShippersService {
     return this.http.post(url,shipperRequest);
   }
 
-  public obtenerShippers (): Observable<Shipper[]>{
+  public obtenerShippers (): Observable<Array<Shipper>>{
     let url =environment.apiShippers + this.endpoint;
     return this.http.get<Array<Shipper>>(url);
+  }
+
+  public obtenerShippersConId(id:number):Observable<Shipper>
+  {
+    let url =environment.apiShippers + this.endpoint +"/"+id;
+    return this.http.get<Shipper>(url);
   }
 
 }

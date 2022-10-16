@@ -10,6 +10,9 @@ import { ShippersService } from '../services/shippers.service';
 })
 export class ShipperscomandComponent implements OnInit {
   public shipperslist: Array<Shipper> =[];
+  public shipperunico: Shipper;
+  public phoneid = document.getElementById('phone');
+  public companyNameid = document.getElementById('companyName')
 
   form = new FormGroup(
     {
@@ -17,12 +20,17 @@ export class ShipperscomandComponent implements OnInit {
       phone:new FormControl('')      
     }
   );
-  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {   
-
+  constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) { 
+    this.shipperunico = new Shipper;
+    
   }
 
   ngOnInit(): void
   {
+    this.form = this.formBuilder.group({
+      companyName:[''],
+      phone:[''],
+    });
     this.obtenerShippers();
 
   }
@@ -33,6 +41,19 @@ export class ShipperscomandComponent implements OnInit {
     })
   }
 
+  obtenerShippersConId(id: number)
+  {
+    this.shippersService.obtenerShippersConId(id).subscribe (res => {
+      this.shipperunico= res;
+    })
+    if (this.phoneid?.textContent != undefined) {
+      this.phoneid.textContent= this.shipperunico.Phone;
+    }
+    if (this.companyNameid?.textContent != undefined) {
+      this.companyNameid.textContent= this.shipperunico.CompanyName;
+    }
+  }
+  
   guardarShipper()
   {
     var shipper = new Shipper()

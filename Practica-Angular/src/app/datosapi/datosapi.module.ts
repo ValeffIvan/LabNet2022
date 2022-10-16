@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 import { ShippinglistComponent } from './shippinglist/shippinglist.component';
 import { ShipperscomandComponent } from './shipperscomand/shipperscomand.component';
@@ -19,7 +20,8 @@ import {MatCardModule} from '@angular/material/card';
     ReactiveFormsModule,
     HttpClientModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ]
 })
 export class DatosapiModule { }

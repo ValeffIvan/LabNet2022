@@ -16,7 +16,7 @@ export class ShippinglistComponent implements OnInit {
   ngOnInit(): void
   {
     this.obtenerShippers();
-
+    
   }
   obtenerShippers()
   {
