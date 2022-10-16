@@ -4,7 +4,7 @@
             <div class="form-group">
                 <label for="companyName">Company Name</label>
                 <input formControlName="companyName" type="text" name="companyName" id="companyName" class="form-control" placeholder="Company Name">
-                <mat-error  *ngIf="this.form.get('companyName')?.hasError('minLength') ||this.form.get('companyName')?.hasError('pattern')">
+                <mat-error  *ngIf="this.form.get('companyName')!.hasError('minLength') || this.form.get('companyName')!.hasError('pattern')">
                     Valid Company Name is required.
                 </mat-error>
             </div>
@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label for="phone">Phone</label>
                 <input formControlName="phone" type="text" name="phone" id="phone" class="form-control" placeholder="Phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1');">
-                <mat-error *ngIf="this.form.get('phone')?.hasError('minLength')">
+                <mat-error *ngIf="this.form.get('phone')!.hasError('minLength')">
                     Valid Phone is required.
                   </mat-error>
             </div>

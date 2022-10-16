@@ -3,16 +3,16 @@
         <form action="#" class="border p-3 form" [formGroup]="form">
           <div class="form-group">
             <label for="ShipperID">Shipper ID</label>
-            <input type="text" name="ShipperID" id="ShipperID" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1');" placeholder="ShipperID">
-            <mat-error  *ngIf="this.form.get('companyName')?.hasError('minLength') ||this.form.get('companyName')?.hasError('pattern')">
-                Valid Company Name is required.
+            <input type="number" (keyup)="obtenerShippersConId()" name="ShipperID" id="ShipperID" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1');" placeholder="ShipperID">
+            <mat-error  *ngIf="this.form.get('companyName')!.hasError('minLength') ||this.form.get('companyName')!.hasError('pattern')">
+                Valid Shipper ID is required.
             </mat-error>
             <br>
           </div>  
             <div class="form-group">
                 <label for="companyName">Company Name</label>
                 <input type="text" name="companyName" id="companyName" class="form-control" placeholder="CompanyName">
-                <mat-error  *ngIf="this.form.get('companyName')?.hasError('minLength') ||this.form.get('companyName')?.hasError('pattern')">
+                <mat-error  *ngIf="this.form.get('companyName')!.hasError('minLength') ||this.form.get('companyName')!.hasError('pattern')">
                     Valid Company Name is required.
                 </mat-error>
             </div>

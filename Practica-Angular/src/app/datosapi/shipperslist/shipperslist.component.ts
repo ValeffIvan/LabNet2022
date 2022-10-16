@@ -25,10 +25,5 @@ export class ShipperslistComponent implements OnInit {
     })
   }
 
-  guardarShipper()
-  {
-    var shipper = new Shipper()
-  }
-
 
 }

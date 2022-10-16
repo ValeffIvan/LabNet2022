@@ -22,9 +22,5 @@ export class ShipperscomandComponent implements OnInit {
       this.shipperslist= res;
     })
   }
-  cancelarFormulario()
-  {
-
-  }
 }
 
