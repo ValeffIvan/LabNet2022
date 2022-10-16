@@ -9,8 +9,9 @@ import { ShippersService } from '../services/shippers.service';
   styleUrls: ['./modificar.component.scss']
 })
 export class ModificarComponent implements OnInit {
+  private phonevalidator:string ='(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})';
   companyName = new FormControl ('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
-  phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
+  phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator,Validators.pattern(this.phonevalidator)]);
   ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator]);
   public shipperslist: Array<Shipper> =[];
   public shipperunico = new Shipper;
