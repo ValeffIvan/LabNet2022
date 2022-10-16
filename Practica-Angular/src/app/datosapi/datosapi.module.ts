@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 
-import { ShippinglistComponent } from './shippinglist/shippinglist.component';
+import { ShippinglistComponent } from './shippierslist/shippinglist.component';
 import { ShipperscomandComponent } from './shipperscomand/shipperscomand.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatCardModule} from '@angular/material/card'; 
