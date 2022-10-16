@@ -24,8 +24,8 @@ constructor(private formBuilder:FormBuilder,private shippersService : ShippersSe
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      companyName:['algo',[Validators.required, Validators.minLength(1), Validators.maxLength(5)]],
-      phone:['123',[Validators.required, Validators.minLength(10), Validators.pattern(this.phonevalidator)]],
+      companyName:['',[Validators.required, Validators.minLength(1)]],
+      phone:['',[Validators.required, Validators.minLength(10), Validators.pattern(this.phonevalidator)]],
     });
   }
 
@@ -34,18 +34,7 @@ constructor(private formBuilder:FormBuilder,private shippersService : ShippersSe
   let shipper=new Shipper();
   shipper.CompanyName= this.form.get('companyName')!.value;
   shipper.Phone= this.form.get('phone')!.value;
-  this.shippersService.crearShipper(shipper).subscribe(res =>
-    this.form.reset()
-    
-    )};
-
-    validationcompanyName() : boolean
-    {
-      return (!this.form.get('companyName')?.valid);
-    }
-
-    validationPhone () : boolean
-    {
-      return (!this.form.get('phone')?.valid);
-    }
+  this.shippersService.crearShipper(shipper).subscribe()
+  this.form.reset()
+};
 }

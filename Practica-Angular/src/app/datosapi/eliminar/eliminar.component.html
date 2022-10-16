@@ -16,9 +16,12 @@
                     <td>{{shipper.ShipperID}}</td>
                     <td>{{shipper.CompanyName}}</td>
                     <td>{{shipper.Phone}}</td>
-                 </tr>
+                    <td>
+                    <button type="button" class="btn btn-danger" (click)="eliminarShipper(shipper.ShipperID)" id="botoneliminar">Borrar Shipper</button>
+                    </td>
+                  </tr>
                 </tbody>
-              </table>
+              </table><!--
               <mat-form-field appearance="fill">
                 <mat-label>Shipper ID</mat-label>
                 <mat-select>
@@ -27,8 +30,7 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-            <br>
-            <button type="submit" class="btn btn-primary" (click)="eliminarShipper()">Borrar Shipper</button>
+            <br>-->
         </form>
     </div>
 </div>

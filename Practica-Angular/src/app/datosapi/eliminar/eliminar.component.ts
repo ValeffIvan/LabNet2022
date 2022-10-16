@@ -13,7 +13,8 @@ export class EliminarComponent implements OnInit {
   public form = new FormGroup(
     {
       companyName: new FormControl(''),
-      phone:new FormControl('')      
+      phone:new FormControl(''),
+      id: new FormControl(''),   
     }
   );
   constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) {}
@@ -23,6 +24,7 @@ export class EliminarComponent implements OnInit {
     this.form = this.formBuilder.group({
       companyName:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
       phone:['',[Validators.required, Validators.minLength(1), Validators.nullValidator]],
+      id:['']
     });
   }
   obtenerShippers()
@@ -33,8 +35,8 @@ export class EliminarComponent implements OnInit {
     })
   }
 
-  eliminarShipper ()
+  eliminarShipper (id:number)
   {
-    this.shippersService.eliminarShipper(this.form.get('id')?.value);
+    this.shippersService.eliminarShipper(id).subscribe();
   }
 }

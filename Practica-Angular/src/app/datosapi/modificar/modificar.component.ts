@@ -57,9 +57,10 @@ export class ModificarComponent implements OnInit {
   
   updateShipper ()
   {
-    let shipper=new Shipper();
-    shipper.CompanyName= this.form.get('companyName')!.value;
-    shipper.Phone= this.form.get('phone')!.value;
+    var shipper=new Shipper();
+    shipper.ShipperID=this.form.get('ShipperID')?.value;
+    shipper.CompanyName= this.form.get('companyName')?.value;
+    shipper.Phone= this.form.get('phone')?.value;
     this.shippersService.eliminarShipper(shipper.ShipperID);
     this.shippersService.crearShipper(shipper);
   }
