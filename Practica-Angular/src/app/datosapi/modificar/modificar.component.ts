@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AsyncValidator, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Shipper } from '../models/Shipper';
 import { ShippersService } from '../services/shippers.service';
 
@@ -11,9 +11,9 @@ import { ShippersService } from '../services/shippers.service';
 export class ModificarComponent implements OnInit {
   private phonevalidator:string ='(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})';
   companyName = new FormControl ('',[Validators.required, Validators.minLength(1), Validators.nullValidator]);
-  phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator,Validators.pattern(this.phonevalidator)]);
-  ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator]);
   public shipperslist: Array<Shipper> =[];
+  phone= new FormControl('',[Validators.required, Validators.minLength(1), Validators.nullValidator,Validators.pattern(this.phonevalidator)]);
+  
   public shipperunico = new Shipper;
   public phoneid = document.getElementById('phone');
   public companyNameid = document.getElementById('companyName')
@@ -27,8 +27,9 @@ export class ModificarComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, private shippersService : ShippersService) { 
     
   }
+  shipperIDvalidator:string =('^[0-9]+$');
   get f(){return this.form.controls;}
-  
+  ShipperID = new FormControl ('',[Validators.required, Validators.nullValidator,Validators.pattern(this.shipperIDvalidator)]);
   ngOnInit(): void
   {
     this.form = this.formBuilder.group({
