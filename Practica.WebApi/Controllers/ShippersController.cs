@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace Practica.WebApi.Controllers
 {
-    [EnableCors(origins:"https://localhost:44343",headers:"*",methods:"*")]
+    [EnableCors(origins: "https://localhost:4200", headers:"*",methods:"*")]
     [RoutePrefix("api/Shippers")]
     public class ShippersController : ApiController
     {
