@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Practica.WebApi.Controllers
 {
+    [EnableCors(origins:"https://localhost:44343",headers:"*",methods:"*")]
     [RoutePrefix("api/Shippers")]
     public class ShippersController : ApiController
     {
